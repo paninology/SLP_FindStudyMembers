@@ -12,6 +12,8 @@ class PhoneAuthoView: LogInView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         userTextField.placeholder = "  휴대폰 번호(-없이 숫자만 입력)"
+        userTextField.keyboardType = .numberPad
+        confirmButton.backgroundColor = .lightGray
         confirmButton.setTitle("인증문자 받기", for: .normal)
     }
     

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxCocoa
 
 
 class PhoneAuthoViewController: UIViewController {
@@ -21,4 +22,6 @@ class PhoneAuthoViewController: UIViewController {
         super.viewDidLoad()
         
     }
+    
+    
 }

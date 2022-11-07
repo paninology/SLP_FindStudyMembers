@@ -23,6 +23,11 @@
 		8F4245A2291905FC00DDC3BE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4245A1291905FC00DDC3BE /* Constants.swift */; };
 		8F4245A529190CD400DDC3BE /* PhoneAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4245A429190CD400DDC3BE /* PhoneAuthView.swift */; };
 		8F4245A729190D9F00DDC3BE /* PhoneAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4245A629190D9F00DDC3BE /* PhoneAuthViewController.swift */; };
+		8F4245A929194C1E00DDC3BE /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4245A829194C1E00DDC3BE /* LogInViewModel.swift */; };
+		8F4245AD29194CAD00DDC3BE /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 8F4245AC29194CAD00DDC3BE /* RxCocoa */; };
+		8F4245AF29194CAD00DDC3BE /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8F4245AE29194CAD00DDC3BE /* RxSwift */; };
+		8F4245B129194EA700DDC3BE /* EnterPhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4245B029194EA700DDC3BE /* EnterPhoneNumberView.swift */; };
+		8F4245B3291951FB00DDC3BE /* EnterPhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4245B2291951FB00DDC3BE /* EnterPhoneNumberViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +50,9 @@
 		8F4245A1291905FC00DDC3BE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8F4245A429190CD400DDC3BE /* PhoneAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthView.swift; sourceTree = "<group>"; };
 		8F4245A629190D9F00DDC3BE /* PhoneAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthViewController.swift; sourceTree = "<group>"; };
+		8F4245A829194C1E00DDC3BE /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
+		8F4245B029194EA700DDC3BE /* EnterPhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneNumberView.swift; sourceTree = "<group>"; };
+		8F4245B2291951FB00DDC3BE /* EnterPhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneNumberViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F4245AF29194CAD00DDC3BE /* RxSwift in Frameworks */,
+				8F4245AD29194CAD00DDC3BE /* RxCocoa in Frameworks */,
 				8F4245942919007300DDC3BE /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				8F42458D2918FE9600DDC3BE /* LogInView.swift */,
+				8F4245A829194C1E00DDC3BE /* LogInViewModel.swift */,
 				8F4245A329190C9A00DDC3BE /* PhoneAuthorization */,
 				8F4245902919005900DDC3BE /* LogInViewController.swift */,
 			);
@@ -144,6 +155,8 @@
 			children = (
 				8F4245A429190CD400DDC3BE /* PhoneAuthView.swift */,
 				8F4245A629190D9F00DDC3BE /* PhoneAuthViewController.swift */,
+				8F4245B029194EA700DDC3BE /* EnterPhoneNumberView.swift */,
+				8F4245B2291951FB00DDC3BE /* EnterPhoneNumberViewController.swift */,
 			);
 			path = PhoneAuthorization;
 			sourceTree = "<group>";
@@ -166,6 +179,8 @@
 			name = SLP_FindStudyMembers;
 			packageProductDependencies = (
 				8F4245932919007300DDC3BE /* SnapKit */,
+				8F4245AC29194CAD00DDC3BE /* RxCocoa */,
+				8F4245AE29194CAD00DDC3BE /* RxSwift */,
 			);
 			productName = SLP_FindStudyMembers;
 			productReference = 8F42456C2918D45200DDC3BE /* SLP_FindStudyMembers.app */;
@@ -197,6 +212,7 @@
 			mainGroup = 8F4245632918D45200DDC3BE;
 			packageReferences = (
 				8F4245922919007300DDC3BE /* XCRemoteSwiftPackageReference "SnapKit" */,
+				8F4245AB29194CAD00DDC3BE /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 8F42456D2918D45200DDC3BE /* Products */;
 			projectDirPath = "";
@@ -230,13 +246,16 @@
 				8F4245742918D45200DDC3BE /* ViewController.swift in Sources */,
 				8F4245A2291905FC00DDC3BE /* Constants.swift in Sources */,
 				8F4245702918D45200DDC3BE /* AppDelegate.swift in Sources */,
+				8F4245A929194C1E00DDC3BE /* LogInViewModel.swift in Sources */,
 				8F4245A729190D9F00DDC3BE /* PhoneAuthViewController.swift in Sources */,
 				8F4245992919025B00DDC3BE /* Color.swift in Sources */,
 				8F42458E2918FE9600DDC3BE /* LogInView.swift in Sources */,
 				8F424596291900DC00DDC3BE /* BaseView.swift in Sources */,
+				8F4245B129194EA700DDC3BE /* EnterPhoneNumberView.swift in Sources */,
 				8F4245912919005900DDC3BE /* LogInViewController.swift in Sources */,
 				8F4245722918D45200DDC3BE /* SceneDelegate.swift in Sources */,
 				8F4245A529190CD400DDC3BE /* PhoneAuthView.swift in Sources */,
+				8F4245B3291951FB00DDC3BE /* EnterPhoneNumberViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +491,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		8F4245AB29194CAD00DDC3BE /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -479,6 +506,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8F4245922919007300DDC3BE /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		8F4245AC29194CAD00DDC3BE /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F4245AB29194CAD00DDC3BE /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		8F4245AE29194CAD00DDC3BE /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F4245AB29194CAD00DDC3BE /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

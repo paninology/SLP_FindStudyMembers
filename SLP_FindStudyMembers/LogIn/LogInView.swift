@@ -16,12 +16,14 @@ class LogInView: BaseView {
         view.numberOfLines = 0
         view.font = .systemFont(ofSize: 20)
         view.textAlignment = .center
+        
 
         return view
     }()
     
     let userTextField: UITextField = {
         let view = UITextField()
+        
         return view
     }()
     
@@ -50,7 +52,7 @@ class LogInView: BaseView {
     
     override func setConstraints() {
         mainLabel.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide).inset(169)
+            make.top.equalTo(safeAreaLayoutGuide).inset(125)
             make.horizontalEdges.equalToSuperview().inset(74)
             make.height.equalTo(64)
         }
