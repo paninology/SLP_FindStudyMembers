@@ -7,11 +7,14 @@
 
 import UIKit
 import RxCocoa
+import RxSwift
 
 
 class PhoneAuthoViewController: UIViewController {
     
     let mainView = PhoneAuthoView()
+    
+    let disposeBag = DisposeBag()
     
     override func loadView() {
         super.loadView()
@@ -20,8 +23,18 @@ class PhoneAuthoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        UIBind()
     }
     
+    func UIBind() {
+        
+        mainView.confirmButton.rx.tap
+            .withUnretained(self)
+            .bind { (vc, _) in
+                vc.transition(EnterPhoneNumberViewController(), transitionStyle: .push)
+            }
+            .disposed(by: disposeBag)
+            
+    }
     
 }

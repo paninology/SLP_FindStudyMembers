@@ -16,17 +16,13 @@ class LogInView: BaseView {
         view.numberOfLines = 0
         view.font = .systemFont(ofSize: 20)
         view.textAlignment = .center
-        
 
         return view
     }()
     
-    let userTextField: UITextField = {
-        let view = UITextField()
-        
-        return view
-    }()
     
+    
+
     let textFieldUnderLine: UILabel = {
         let view = UILabel()
         return view
@@ -47,25 +43,23 @@ class LogInView: BaseView {
     
     override func configure() {
         backgroundColor = Constants.Color.background
-        [mainLabel, userTextField, confirmButton].forEach { addSubview($0) }
+        [mainLabel, confirmButton].forEach { addSubview($0) }
+        
     }
     
     override func setConstraints() {
         mainLabel.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide).inset(125)
-            make.horizontalEdges.equalToSuperview().inset(74)
+            make.horizontalEdges.equalToSuperview().inset(44)
             make.height.equalTo(64)
         }
-        userTextField.snp.makeConstraints { make in
-            make.top.equalTo(mainLabel.snp.bottom).offset(64)
-            make.horizontalEdges.equalToSuperview().inset(16)
-            make.height.equalTo(48)
-        }
+
         confirmButton.snp.makeConstraints { make in
-            make.top.equalTo(userTextField.snp.bottom).offset(72)
+            make.bottom.equalToSuperview().inset(350)
             make.horizontalEdges.equalToSuperview().inset(16)
             make.height.equalTo(48)
         }
+       
     }
     
     

@@ -5,10 +5,16 @@
 //  Created by yongseok lee on 2022/11/07.
 //
 
-import Foundation
+import UIKit
 
 
 class EnterPhoneNumberView: LogInView {
+    
+    let userTextField: UITextField = {
+        let view = UITextField()
+        
+        return view
+    }()
     
     let resendButton: GreenCurvedButton = {
         let view = GreenCurvedButton()
@@ -18,10 +24,11 @@ class EnterPhoneNumberView: LogInView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        userTextField.placeholder = "  휴대폰 번호(-없이 숫자만 입력)"
+        mainLabel.text = "인증번호가 문자로 전송되었어요"
+        userTextField.placeholder = "  인증번호 입력"
         userTextField.keyboardType = .numberPad
         confirmButton.backgroundColor = .lightGray
-        confirmButton.setTitle("인증문자 받기", for: .normal)
+        confirmButton.setTitle("인증하고 시작하기", for: .normal)
     }
     
     
@@ -30,23 +37,29 @@ class EnterPhoneNumberView: LogInView {
     }
     override func configure() {
         super.configure()
-        addSubview(resendButton)
+
+        [resendButton, userTextField].forEach { addSubview($0) }
     }
     
     override func setConstraints() {
         super.setConstraints()
         
+        userTextField.snp.makeConstraints { make in
+            make.top.equalTo(mainLabel.snp.bottom).offset(64)
+            make.leading.equalToSuperview().inset(16)
+            make.height.equalTo(48)
+            make.trailing.equalTo(resendButton.snp.leading).offset(-8)
+            
+        }
         resendButton.snp.makeConstraints { make in
-            make.top.equalTo(userTextField.snp.top)
+            make.top.equalTo(mainLabel.snp.bottom).offset(64)
             make.bottom.equalTo(userTextField.snp.bottom)
             make.trailing.equalToSuperview().inset(16)
-            make.width.equalTo(72)
+            make.width.equalTo(90)
 
         }
         
-        userTextField.snp.makeConstraints { make in
-            make.trailing.equalTo(resendButton.snp.leading).offset(8)
-        }
+        
         
     }
 }
