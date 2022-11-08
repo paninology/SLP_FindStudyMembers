@@ -22,6 +22,13 @@ class EnterPhoneNumberView: LogInView {
         return view
     }()
     
+    let textFieldUnderLine: UILabel = {
+        let view = UILabel()
+        view.layer.borderColor = UIColor.systemGray3.cgColor
+        view.layer.borderWidth = 1
+        return view
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         mainLabel.text = "인증번호가 문자로 전송되었어요"
@@ -38,7 +45,7 @@ class EnterPhoneNumberView: LogInView {
     override func configure() {
         super.configure()
 
-        [resendButton, userTextField].forEach { addSubview($0) }
+        [resendButton, userTextField, textFieldUnderLine].forEach { addSubview($0) }
     }
     
     override func setConstraints() {
@@ -57,6 +64,12 @@ class EnterPhoneNumberView: LogInView {
             make.trailing.equalToSuperview().inset(16)
             make.width.equalTo(90)
 
+        }
+        
+        textFieldUnderLine.snp.makeConstraints { make in
+            make.bottom.equalTo(userTextField.snp.bottom)
+            make.horizontalEdges.equalTo(userTextField.snp.horizontalEdges)
+            make.height.equalTo(1)
         }
         
         

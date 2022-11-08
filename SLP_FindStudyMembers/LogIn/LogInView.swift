@@ -23,10 +23,7 @@ class LogInView: BaseView {
     
     
 
-    let textFieldUnderLine: UILabel = {
-        let view = UILabel()
-        return view
-    }()
+    
     
     let confirmButton: GreenCurvedButton = {
         let view = GreenCurvedButton()

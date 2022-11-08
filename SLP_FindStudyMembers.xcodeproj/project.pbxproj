@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8F4003F3291A22220040D91B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4003F2291A22220040D91B /* BaseViewController.swift */; };
 		8F4003F9291A29DD0040D91B /* Transition+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4003F8291A29DD0040D91B /* Transition+Extensions.swift */; };
+		8F4003FB291A593E0040D91B /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4003FA291A593E0040D91B /* String+Extension.swift */; };
+		8F4003FF291A9EE20040D91B /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 8F4003FE291A9EE20040D91B /* Toast */; };
 		8F4245702918D45200DDC3BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F42456F2918D45200DDC3BE /* AppDelegate.swift */; };
 		8F4245722918D45200DDC3BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4245712918D45200DDC3BE /* SceneDelegate.swift */; };
 		8F4245742918D45200DDC3BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4245732918D45200DDC3BE /* ViewController.swift */; };
@@ -35,6 +37,7 @@
 /* Begin PBXFileReference section */
 		8F4003F2291A22220040D91B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8F4003F8291A29DD0040D91B /* Transition+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transition+Extensions.swift"; sourceTree = "<group>"; };
+		8F4003FA291A593E0040D91B /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		8F42456C2918D45200DDC3BE /* SLP_FindStudyMembers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SLP_FindStudyMembers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F42456F2918D45200DDC3BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F4245712918D45200DDC3BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F4003FF291A9EE20040D91B /* Toast in Frameworks */,
 				8F4245AF29194CAD00DDC3BE /* RxSwift in Frameworks */,
 				8F4245AD29194CAD00DDC3BE /* RxCocoa in Frameworks */,
 				8F4245942919007300DDC3BE /* SnapKit in Frameworks */,
@@ -77,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				8F4003F8291A29DD0040D91B /* Transition+Extensions.swift */,
+				8F4003FA291A593E0040D91B /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 				8F4245932919007300DDC3BE /* SnapKit */,
 				8F4245AC29194CAD00DDC3BE /* RxCocoa */,
 				8F4245AE29194CAD00DDC3BE /* RxSwift */,
+				8F4003FE291A9EE20040D91B /* Toast */,
 			);
 			productName = SLP_FindStudyMembers;
 			productReference = 8F42456C2918D45200DDC3BE /* SLP_FindStudyMembers.app */;
@@ -227,6 +233,7 @@
 			packageReferences = (
 				8F4245922919007300DDC3BE /* XCRemoteSwiftPackageReference "SnapKit" */,
 				8F4245AB29194CAD00DDC3BE /* XCRemoteSwiftPackageReference "RxSwift" */,
+				8F4003FD291A9EE20040D91B /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = 8F42456D2918D45200DDC3BE /* Products */;
 			projectDirPath = "";
@@ -264,6 +271,7 @@
 				8F4245A929194C1E00DDC3BE /* LogInViewModel.swift in Sources */,
 				8F4003F3291A22220040D91B /* BaseViewController.swift in Sources */,
 				8F4245A729190D9F00DDC3BE /* PhoneAuthViewController.swift in Sources */,
+				8F4003FB291A593E0040D91B /* String+Extension.swift in Sources */,
 				8F4245992919025B00DDC3BE /* Color.swift in Sources */,
 				8F42458E2918FE9600DDC3BE /* LogInView.swift in Sources */,
 				8F424596291900DC00DDC3BE /* BaseView.swift in Sources */,
@@ -499,6 +507,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		8F4003FD291A9EE20040D91B /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		8F4245922919007300DDC3BE /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -518,6 +534,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8F4003FE291A9EE20040D91B /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F4003FD291A9EE20040D91B /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
 		8F4245932919007300DDC3BE /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8F4245922919007300DDC3BE /* XCRemoteSwiftPackageReference "SnapKit" */;

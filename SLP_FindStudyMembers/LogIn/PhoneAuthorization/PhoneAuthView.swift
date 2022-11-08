@@ -15,6 +15,13 @@ class PhoneAuthoView: LogInView {
         return view
     }()
     
+    let textFieldUnderLine: UILabel = {
+        let view = UILabel()
+        view.layer.borderColor = UIColor.systemGray3.cgColor
+        view.layer.borderWidth = 1
+        return view
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         userTextField.placeholder = "  휴대폰 번호(-없이 숫자만 입력)"
@@ -31,6 +38,7 @@ class PhoneAuthoView: LogInView {
     override func configure() {
         super.configure()
         addSubview(userTextField)
+        addSubview(textFieldUnderLine)
     }
     
     override func setConstraints() {
@@ -40,6 +48,12 @@ class PhoneAuthoView: LogInView {
             make.top.equalTo(mainLabel.snp.bottom).offset(64)
             make.horizontalEdges.equalToSuperview().inset(16)
             make.height.equalTo(48)
+        }
+        
+        textFieldUnderLine.snp.makeConstraints { make in
+            make.bottom.equalTo(userTextField.snp.bottom)
+            make.horizontalEdges.equalToSuperview().inset(16)
+            make.height.equalTo(1)
         }
     }
       
