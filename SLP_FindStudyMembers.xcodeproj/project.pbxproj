@@ -15,6 +15,8 @@
 		8F3FA5CB291BA55400379423 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8F3FA5CA291BA55400379423 /* FirebaseAuth */; };
 		8F3FA5CD291BA55400379423 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8F3FA5CC291BA55400379423 /* FirebaseCrashlytics */; };
 		8F3FA5CF291BA55400379423 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8F3FA5CE291BA55400379423 /* FirebaseMessaging */; };
+		8F3FA5D2291BDC8900379423 /* BirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3FA5D1291BDC8900379423 /* BirthdayView.swift */; };
+		8F3FA5D4291BE76100379423 /* BirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3FA5D3291BE76100379423 /* BirthdayViewController.swift */; };
 		8F4003F3291A22220040D91B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4003F2291A22220040D91B /* BaseViewController.swift */; };
 		8F4003F9291A29DD0040D91B /* Transition+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4003F8291A29DD0040D91B /* Transition+Extensions.swift */; };
 		8F4003FB291A593E0040D91B /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4003FA291A593E0040D91B /* String+Extension.swift */; };
@@ -40,6 +42,7 @@
 		8F4245AF29194CAD00DDC3BE /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8F4245AE29194CAD00DDC3BE /* RxSwift */; };
 		8F4245B129194EA700DDC3BE /* EnterPhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4245B029194EA700DDC3BE /* EnterPhoneNumberView.swift */; };
 		8F4245B3291951FB00DDC3BE /* EnterPhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4245B2291951FB00DDC3BE /* EnterPhoneNumberViewController.swift */; };
+		8F6082B2291F89D4008B6E58 /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6082B1291F89D4008B6E58 /* EmailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,8 @@
 		8F3FA5B5291B2F5D00379423 /* NickNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameViewController.swift; sourceTree = "<group>"; };
 		8F3FA5C3291B850000379423 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		8F3FA5C5291B855E00379423 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8F3FA5D1291BDC8900379423 /* BirthdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayView.swift; sourceTree = "<group>"; };
+		8F3FA5D3291BE76100379423 /* BirthdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewController.swift; sourceTree = "<group>"; };
 		8F4003F2291A22220040D91B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		8F4003F8291A29DD0040D91B /* Transition+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transition+Extensions.swift"; sourceTree = "<group>"; };
 		8F4003FA291A593E0040D91B /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -72,6 +77,7 @@
 		8F4245A829194C1E00DDC3BE /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
 		8F4245B029194EA700DDC3BE /* EnterPhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneNumberView.swift; sourceTree = "<group>"; };
 		8F4245B2291951FB00DDC3BE /* EnterPhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneNumberViewController.swift; sourceTree = "<group>"; };
+		8F6082B1291F89D4008B6E58 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,15 @@
 				8F3FA5B5291B2F5D00379423 /* NickNameViewController.swift */,
 			);
 			path = NickName;
+			sourceTree = "<group>";
+		};
+		8F3FA5D0291BDC5800379423 /* BirthDay */ = {
+			isa = PBXGroup;
+			children = (
+				8F3FA5D1291BDC8900379423 /* BirthdayView.swift */,
+				8F3FA5D3291BE76100379423 /* BirthdayViewController.swift */,
+			);
+			path = BirthDay;
 			sourceTree = "<group>";
 		};
 		8F4003F7291A29AA0040D91B /* Extensions */ = {
@@ -165,7 +180,9 @@
 				8F4245A829194C1E00DDC3BE /* LogInViewModel.swift */,
 				8F4245A329190C9A00DDC3BE /* PhoneAuthorization */,
 				8F3FA5B2291B2A1600379423 /* NickName */,
+				8F3FA5D0291BDC5800379423 /* BirthDay */,
 				8F4245902919005900DDC3BE /* LogInViewController.swift */,
+				8F6082B0291F89BB008B6E58 /* EnterEmail */,
 			);
 			path = LogIn;
 			sourceTree = "<group>";
@@ -206,6 +223,14 @@
 				8F4245B2291951FB00DDC3BE /* EnterPhoneNumberViewController.swift */,
 			);
 			path = PhoneAuthorization;
+			sourceTree = "<group>";
+		};
+		8F6082B0291F89BB008B6E58 /* EnterEmail */ = {
+			isa = PBXGroup;
+			children = (
+				8F6082B1291F89D4008B6E58 /* EmailView.swift */,
+			);
+			path = EnterEmail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +326,7 @@
 				8F3FA5B4291B2A3100379423 /* NickNameView.swift in Sources */,
 				8F42459C291903B000DDC3BE /* CustomButtons.swift in Sources */,
 				8F3FA5B6291B2F5D00379423 /* NickNameViewController.swift in Sources */,
+				8F6082B2291F89D4008B6E58 /* EmailView.swift in Sources */,
 				8F4245742918D45200DDC3BE /* ViewController.swift in Sources */,
 				8F4003F9291A29DD0040D91B /* Transition+Extensions.swift in Sources */,
 				8F4245A2291905FC00DDC3BE /* Constants.swift in Sources */,
@@ -313,10 +339,12 @@
 				8F42458E2918FE9600DDC3BE /* LogInView.swift in Sources */,
 				8F424596291900DC00DDC3BE /* BaseView.swift in Sources */,
 				8F4245B129194EA700DDC3BE /* EnterPhoneNumberView.swift in Sources */,
+				8F3FA5D2291BDC8900379423 /* BirthdayView.swift in Sources */,
 				8F4245912919005900DDC3BE /* LogInViewController.swift in Sources */,
 				8F4245722918D45200DDC3BE /* SceneDelegate.swift in Sources */,
 				8F4245A529190CD400DDC3BE /* PhoneAuthView.swift in Sources */,
 				8F4245B3291951FB00DDC3BE /* EnterPhoneNumberViewController.swift in Sources */,
+				8F3FA5D4291BE76100379423 /* BirthdayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

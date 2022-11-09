@@ -19,6 +19,8 @@ final class LogInViewModel {
     
     let validataion = PublishSubject<Bool>()
     
+    let birthday = BehaviorSubject<Date>(value: Date())
+    
     let disposeBag = DisposeBag()
     
     
