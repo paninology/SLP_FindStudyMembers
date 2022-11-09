@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class BaseViewController: UIViewController {
  
- 
+    let disposeBag = DisposeBag()
     
     override func loadView() {
         super.loadView()

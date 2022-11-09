@@ -7,9 +7,9 @@
 
 import UIKit
 
-class EnterPhoneNumberViewController: UIViewController {
+final class EnterPhoneNumberViewController: BaseViewController {
     
-    let mainView = EnterPhoneNumberView()
+    private let mainView = EnterPhoneNumberView()
     
     override func loadView() {
         super.loadView()
@@ -18,6 +18,16 @@ class EnterPhoneNumberViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UIBind()
+    }
+    
+    func UIBind() {
+        mainView.confirmButton.rx.tap
+            .withUnretained(self)
+            .bind { (vc,_) in
+                vc.transition(NickNameViewController(), transitionStyle: .push)
+            }
+            .disposed(by: disposeBag)
     }
     
 }

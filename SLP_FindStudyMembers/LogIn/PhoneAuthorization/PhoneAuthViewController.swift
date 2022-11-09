@@ -6,16 +6,21 @@
 //
 
 import UIKit
-import RxCocoa
-import RxSwift
+
+import Toast
+import FirebaseAuth
+//import RxCocoa
+//import RxSwift
 
 
-class PhoneAuthoViewController: UIViewController {
+final class PhoneAuthoViewController: BaseViewController {
     
-    let mainView = PhoneAuthoView()
+    private let mainView = PhoneAuthoView()
     
-    let viewModel = LogInViewModel()
-    let disposeBag = DisposeBag()
+    private let viewModel = LogInViewModel()
+//    private let disposeBag = DisposeBag()
+    
+    private var validation = false
     
     override func loadView() {
         super.loadView()
@@ -26,11 +31,11 @@ class PhoneAuthoViewController: UIViewController {
         super.viewDidLoad()
         UIBind()
         viewModel.convertPhoneNum()
-        viewModel.checkValidation()
+       
         
     }
     
-    func UIBind() {
+    private func UIBind() {
         
         mainView.userTextField.rx.text
             .orEmpty
@@ -41,25 +46,38 @@ class PhoneAuthoViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
-        mainView.userTextField.rx.text
+        mainView.userTextField.rx.text //viewmodel로 유효성검사 옮기자
             .orEmpty
             .map { $0.replacingOccurrences(of: "-", with: "") }
             .map { $0.count == 10 || $0.count == 11 }
             .withUnretained(self)
             .bind { (vc, value) in
-//                self?.viewModel.phoneNumber.onNext(value)
-                let color =  value ? Constants.Color.customGreen : UIColor.systemGray3
-                vc.mainView.confirmButton.backgroundColor = color
+                vc.viewModel.checkValidation(input: value)
+    
             }
             .disposed(by: disposeBag)
+        
         
         mainView.confirmButton.rx.tap
             .withUnretained(self)
             .bind { (vc, _) in
-                vc.transition(EnterPhoneNumberViewController(), transitionStyle: .push)
+                if vc.validation {
+//                    vc.requestPhoneAuth(phoneNumber: "+821038994681")
+                    vc.sendRequest()
+                }else {
+                    vc.mainView.makeToast("유효하지 않은 전화번호 형식입니다.")
+                }
+                
             }
             .disposed(by: disposeBag)
         
+//        mainView.confirmButton.rx.tap
+//            .map { }
+//            .withUnretained(self)
+//            .bind { (vc, _) in
+//                vc.transition(EnterPhoneNumberViewController(), transitionStyle: .push)
+//            }
+//            .disposed(by: disposeBag)
         
             
         viewModel.phoneNumForLabel
@@ -74,8 +92,55 @@ class PhoneAuthoViewController: UIViewController {
 //            .withUnretained(self)
 //            .
             
+        viewModel.validataion
+            .withUnretained(self)
+            .subscribe { (vc, value) in
+                let color =  value ? Constants.Color.customGreen : UIColor.systemGray3
+                vc.mainView.confirmButton.backgroundColor = color
+                vc.validation = value
+            }
+            .disposed(by: disposeBag)
     }
     
+    func sendRequest() {
+//        viewModel.phoneNumber
+//            .map { $0.replacingOccurrences(of: "-", with: "") }
+//            .withUnretained(self)
+//            .bind { (vc, value) in
+//                vc.requestPhoneAuth(phoneNumber: value)
+//                print("ddddd",value)
+//            }
+//            .disposed(by: disposeBag)
+        
+        mainView.userTextField.rx.text //viewmodel로
+            .orEmpty
+            .map { $0.replacingOccurrences(of: "-", with: "") }
+            .map { "+82" + $0.dropFirst() }
+            .withUnretained(self)
+            .bind { (vc, value) in
+                vc.requestPhoneAuth(phoneNumber: value)
+                print("ddddd",value)
+            }
+            .dispose()
+        
+     
+    }
     
+    func requestPhoneAuth(phoneNumber: String) {
+        Auth.auth().languageCode = "kr"
+        PhoneAuthProvider.provider()
+          .verifyPhoneNumber(phoneNumber, uiDelegate: nil) { [weak self] verificationID, error in
+              if let error = error {
+                  self?.mainView.makeToast(error.localizedDescription)
+                  print("error",error.localizedDescription)
+                
+                return
+              }
+              
+              UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
+              print("success",verificationID)
+              self?.transition(EnterPhoneNumberViewController(), transitionStyle: .push)
+          }
+    }
     
 }

@@ -12,5 +12,12 @@
         
         
 3. 일자별 개발사항
-2022.11.7
+
+2022.11.8
+    이슈 validation rx로 뷰모델로 하기
+    
+11.9
+    ui 완성, 파베 번호인증
+    reCAPTCHA????
+                string.dropFirst()
  
