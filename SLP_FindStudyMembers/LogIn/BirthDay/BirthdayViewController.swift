@@ -6,8 +6,10 @@
 //
 
 import UIKit
+
 import RxSwift
 import RxCocoa
+import Toast
 
 class BirthdayViewController: BaseViewController {
     
@@ -27,9 +29,22 @@ class BirthdayViewController: BaseViewController {
     
     func UIBind() {
         
+        
         mainView.datePicker.rx
             .date
             .bind(to: viewModel.birthday)
+            .disposed(by: disposeBag)
+        
+        mainView.confirmButton.rx
+            .tap
+            .withUnretained(self)
+            .bind { (vc,_) in
+                if vc.viewModel.ageValidation {
+                    vc.transition(EmailViewController(), transitionStyle: .push)
+                } else {
+                    vc.mainView.makeToast("새싹스터디는 만 17세 이상만 사용할 수 있습니다.")
+                }
+            }
             .disposed(by: disposeBag)
         
         viewModel.birthday
@@ -43,6 +58,9 @@ class BirthdayViewController: BaseViewController {
                 formatter.dateFormat = "dd"
                 vc.mainView.dayLabel.text = formatter.string(from: value)
             }
+            .disposed(by: disposeBag)
+        
+        viewModel.checkAgeValidation()
     }
     
 }

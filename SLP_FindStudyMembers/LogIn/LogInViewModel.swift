@@ -17,9 +17,11 @@ final class LogInViewModel {
     
     let phoneNumForLabel = PublishSubject<String>() //아웃풋용
     
-    let validataion = PublishSubject<Bool>()
+    let phoneValidataion = PublishSubject<Bool>()
     
     let birthday = BehaviorSubject<Date>(value: Date())
+    
+    var ageValidation = true
     
     let disposeBag = DisposeBag()
     
@@ -29,7 +31,6 @@ final class LogInViewModel {
         phoneNumber
             .withUnretained(self)
             .subscribe { (vc,value) in
-                print("phoen",value)
                 vc.phoneNumForLabel.onNext(vc.addHyphen(num: value))
         }
             .disposed(by: disposeBag)
@@ -37,8 +38,23 @@ final class LogInViewModel {
     
     func checkValidation(input: Bool) {
 
-        validataion.onNext(input)
+        phoneValidataion.onNext(input)
         
+    }
+    
+    func checkAgeValidation() {
+        func age(birthday: Date) -> Int {
+            print("age",Calendar.current.dateComponents([.year], from: birthday, to: Date()).year ?? 0)
+            return Calendar.current.dateComponents([.year], from: birthday, to: Date()).year ?? 0
+        }
+        
+        birthday //dispose 관리...
+            .map{ age(birthday: $0) >= 17 }
+            .withUnretained(self)
+            .subscribe { (vc,value) in
+                vc.ageValidation = value
+            }
+            .disposed(by: disposeBag)
     }
     
     func addHyphen(num: String)-> String {

@@ -78,6 +78,7 @@ final class BirthdayView: LogInView {
         let view = UIDatePicker()
         view.datePickerMode = .date
         view.preferredDatePickerStyle = .wheels
+        view.maximumDate = Date()
 //        view.setDate(Date(timeIntervalSince1970: 200000000), animated: true)
         return view
     }()

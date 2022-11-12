@@ -9,6 +9,12 @@ import UIKit
 
 final class EmailView: PhoneAuthoView {
     
+    let subLabel: UILabel = {
+       let view = UILabel()
+        view.text = "휴대폰 번호 변경시 인증을 위해 사용해요"
+        view.textAlignment = .center
+        return view
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,9 +30,21 @@ final class EmailView: PhoneAuthoView {
     
     override func configure() {
         super.configure()
+        addSubview(subLabel)
     }
     
     override func setConstraints() {
         super.setConstraints()
+        
+        mainLabel.snp.updateConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide).inset(110)
+        }
+        
+        subLabel.snp.makeConstraints { make in
+            make.top.equalTo(mainLabel.snp.bottom)
+            make.centerX.equalToSuperview()
+//            make.horizontalEdges.equalTo(mainLabel.snp.horizontalEdges)
+
+        }
     }
 }

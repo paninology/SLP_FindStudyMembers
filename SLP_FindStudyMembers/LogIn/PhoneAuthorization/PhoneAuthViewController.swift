@@ -20,7 +20,7 @@ final class PhoneAuthoViewController: BaseViewController {
     private let viewModel = LogInViewModel()
 //    private let disposeBag = DisposeBag()
     
-    private var validation = false
+    private var validation = false  //불필요한 과정인듯. 뷰모델에서 바로 가져다 쓰는방법으로...
     
     override func loadView() {
         super.loadView()
@@ -71,14 +71,6 @@ final class PhoneAuthoViewController: BaseViewController {
             }
             .disposed(by: disposeBag)
         
-//        mainView.confirmButton.rx.tap
-//            .map { }
-//            .withUnretained(self)
-//            .bind { (vc, _) in
-//                vc.transition(EnterPhoneNumberViewController(), transitionStyle: .push)
-//            }
-//            .disposed(by: disposeBag)
-        
             
         viewModel.phoneNumForLabel
             .withUnretained(self)
@@ -92,7 +84,7 @@ final class PhoneAuthoViewController: BaseViewController {
 //            .withUnretained(self)
 //            .
             
-        viewModel.validataion
+        viewModel.phoneValidataion
             .withUnretained(self)
             .subscribe { (vc, value) in
                 let color =  value ? Constants.Color.customGreen : UIColor.systemGray3
