@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
 
 //        let vc = PhoneAuthoViewController()
-        let vc = BirthdayViewController()
+        let vc = GenderViewController()
         let navi = UINavigationController(rootViewController: vc)
         
         window?.rootViewController = navi

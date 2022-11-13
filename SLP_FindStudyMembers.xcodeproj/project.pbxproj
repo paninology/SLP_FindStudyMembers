@@ -42,6 +42,8 @@
 		8F4245AF29194CAD00DDC3BE /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8F4245AE29194CAD00DDC3BE /* RxSwift */; };
 		8F4245B129194EA700DDC3BE /* EnterPhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4245B029194EA700DDC3BE /* EnterPhoneNumberView.swift */; };
 		8F4245B3291951FB00DDC3BE /* EnterPhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4245B2291951FB00DDC3BE /* EnterPhoneNumberViewController.swift */; };
+		8F564CA129210FB40035329C /* GenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F564CA029210FB40035329C /* GenderView.swift */; };
+		8F564CA329210FBD0035329C /* GenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F564CA229210FBD0035329C /* GenderViewController.swift */; };
 		8F6082B2291F89D4008B6E58 /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6082B1291F89D4008B6E58 /* EmailView.swift */; };
 		8F6082B4291F8A98008B6E58 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6082B3291F8A98008B6E58 /* EmailViewController.swift */; };
 /* End PBXBuildFile section */
@@ -78,6 +80,8 @@
 		8F4245A829194C1E00DDC3BE /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
 		8F4245B029194EA700DDC3BE /* EnterPhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneNumberView.swift; sourceTree = "<group>"; };
 		8F4245B2291951FB00DDC3BE /* EnterPhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneNumberViewController.swift; sourceTree = "<group>"; };
+		8F564CA029210FB40035329C /* GenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderView.swift; sourceTree = "<group>"; };
+		8F564CA229210FBD0035329C /* GenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewController.swift; sourceTree = "<group>"; };
 		8F6082B1291F89D4008B6E58 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 		8F6082B3291F8A98008B6E58 /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -185,6 +189,7 @@
 				8F3FA5B2291B2A1600379423 /* NickName */,
 				8F3FA5D0291BDC5800379423 /* BirthDay */,
 				8F6082B0291F89BB008B6E58 /* EnterEmail */,
+				8F564C9F29210FA20035329C /* Gender */,
 			);
 			path = LogIn;
 			sourceTree = "<group>";
@@ -225,6 +230,15 @@
 				8F4245B2291951FB00DDC3BE /* EnterPhoneNumberViewController.swift */,
 			);
 			path = PhoneAuthorization;
+			sourceTree = "<group>";
+		};
+		8F564C9F29210FA20035329C /* Gender */ = {
+			isa = PBXGroup;
+			children = (
+				8F564CA029210FB40035329C /* GenderView.swift */,
+				8F564CA229210FBD0035329C /* GenderViewController.swift */,
+			);
+			path = Gender;
 			sourceTree = "<group>";
 		};
 		8F6082B0291F89BB008B6E58 /* EnterEmail */ = {
@@ -329,6 +343,7 @@
 				8F3FA5B4291B2A3100379423 /* NickNameView.swift in Sources */,
 				8F42459C291903B000DDC3BE /* CustomButtons.swift in Sources */,
 				8F3FA5B6291B2F5D00379423 /* NickNameViewController.swift in Sources */,
+				8F564CA129210FB40035329C /* GenderView.swift in Sources */,
 				8F6082B2291F89D4008B6E58 /* EmailView.swift in Sources */,
 				8F4245742918D45200DDC3BE /* ViewController.swift in Sources */,
 				8F4003F9291A29DD0040D91B /* Transition+Extensions.swift in Sources */,
@@ -336,6 +351,7 @@
 				8F4245702918D45200DDC3BE /* AppDelegate.swift in Sources */,
 				8F4245A929194C1E00DDC3BE /* LogInViewModel.swift in Sources */,
 				8F4003F3291A22220040D91B /* BaseViewController.swift in Sources */,
+				8F564CA329210FBD0035329C /* GenderViewController.swift in Sources */,
 				8F4245A729190D9F00DDC3BE /* PhoneAuthViewController.swift in Sources */,
 				8F6082B4291F8A98008B6E58 /* EmailViewController.swift in Sources */,
 				8F4003FB291A593E0040D91B /* String+Extension.swift in Sources */,

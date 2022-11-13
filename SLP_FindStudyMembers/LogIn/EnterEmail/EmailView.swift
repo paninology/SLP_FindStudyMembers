@@ -21,6 +21,7 @@ final class EmailView: PhoneAuthoView {
         userTextField.placeholder = "SeSAC@email.com"
         mainLabel.text = "이메일을 입력 해주세요"
         confirmButton.setTitle("다음", for: .normal)
+        userTextField.keyboardType = .emailAddress
         
     }
     

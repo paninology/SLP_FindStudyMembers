@@ -13,6 +13,7 @@ final class NickNameView: PhoneAuthoView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         userTextField.placeholder = "10자 이내로 입력"
+        userTextField.keyboardType = .default
         mainLabel.text = "닉네임을 입력해 주세요"
         confirmButton.setTitle("다음", for: .normal)
         

@@ -23,6 +23,12 @@ final class LogInViewModel {
     
     var ageValidation = true
     
+    let userEmail = PublishSubject<String>()
+    
+    var emailValidation = true
+    
+    let userGender = PublishSubject<Int>() //0:남 1:여
+    
     let disposeBag = DisposeBag()
     
     
@@ -78,6 +84,25 @@ final class LogInViewModel {
               print("success",verificationID)
               vc.transition(EnterPhoneNumberViewController(), transitionStyle: .push)
           }
+    }
+    
+    
+    
+    func checkEmailValidation() {
+        func isValidEmail(_ email: String) -> Bool {
+            let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+
+            let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+            return emailPred.evaluate(with: email)
+        }
+        
+        userEmail
+            .map { isValidEmail($0)}
+            .withUnretained(self)
+            .subscribe { (vc,value) in
+                vc.emailValidation = value
+            }
+            .disposed(by: disposeBag)
     }
     
     
