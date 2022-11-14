@@ -19,11 +19,7 @@ class LogInView: BaseView {
 
         return view
     }()
-    
-    
-    
 
-    
     
     let confirmButton: GreenCurvedButton = {
         let view = GreenCurvedButton()
@@ -45,14 +41,16 @@ class LogInView: BaseView {
     }
     
     override func setConstraints() {
+
         mainLabel.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide).inset(125)
+            make.top.equalTo(safeAreaLayoutGuide).inset(120)
             make.horizontalEdges.equalToSuperview().inset(44)
             make.height.equalTo(64)
         }
 
         confirmButton.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().inset(350)
+//            make.bottom.equalToSuperview().multipliedBy(0.7)
+            make.top.equalTo(mainLabel.snp.bottom).offset(200)
             make.horizontalEdges.equalToSuperview().inset(16)
             make.height.equalTo(48)
         }

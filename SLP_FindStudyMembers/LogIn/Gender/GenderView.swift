@@ -17,14 +17,19 @@ final class GenderView: LogInView {
     }()
     
     let maleButton: UIButton = {
-        let view = UIButton()
+        let view = UIButton(configuration: .plain())
         view.layer.cornerRadius = 8
         view.clipsToBounds = true
         view.layer.borderColor = UIColor.systemGray3.cgColor
         view.layer.borderWidth = 0.5
         view.setTitle("남자", for: .normal)
         view.setImage(UIImage(named: "man"), for: .normal)
-        
+        var config = UIButton.Configuration.plain()
+        config.imagePlacement = .top
+        config.titleAlignment = .center
+        view.configuration = config
+        view.setTitleColor(.black, for: .normal)
+      
         return view
     }()
     
@@ -36,6 +41,11 @@ final class GenderView: LogInView {
         view.layer.borderWidth = 0.5
         view.setTitle("여자", for: .normal)
         view.setImage(UIImage(named: "woman"), for: .normal)
+        var config = UIButton.Configuration.plain()
+        config.imagePlacement = .top
+        config.titleAlignment = .center
+        view.configuration = config
+        view.setTitleColor(.black, for: .normal)
         return view
     }()
     
@@ -73,13 +83,13 @@ final class GenderView: LogInView {
             make.top.equalTo(subLabel.snp.bottom).offset(16)
             make.leading.equalTo(16)
             make.height.equalTo(120)
-            make.width.equalToSuperview().multipliedBy(0.4)
+            make.width.equalToSuperview().multipliedBy(0.44)
         }
         femaleButton.snp.makeConstraints { make in
             make.top.equalTo(subLabel.snp.bottom).offset(16)
             make.trailing.equalTo(-16)
             make.height.equalTo(120)
-            make.width.equalToSuperview().multipliedBy(0.4)
+            make.width.equalToSuperview().multipliedBy(0.44)
         }
     }
 }

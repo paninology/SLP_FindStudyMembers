@@ -42,7 +42,6 @@ final class PhoneAuthoViewController: BaseViewController {
             .asDriver(onErrorJustReturn: "")
             .drive { [weak self] value in
                 self?.viewModel.phoneNumber.onNext(value)
-                print(value)
             }
             .disposed(by: disposeBag)
         
@@ -62,10 +61,11 @@ final class PhoneAuthoViewController: BaseViewController {
             .withUnretained(self)
             .bind { (vc, _) in
                 if vc.validation {
-//                    vc.requestPhoneAuth(phoneNumber: "+821038994681")
                     vc.sendRequest()
+                    vc.mainView.makeToast("전화 번호 인증 시작", position: .top)
                 }else {
-                    vc.mainView.makeToast("유효하지 않은 전화번호 형식입니다.")
+                    vc.mainView.makeToast("유효하지 않은 전화번호 형식입니다.", position: .top)
+               
                 }
                 
             }
@@ -79,10 +79,7 @@ final class PhoneAuthoViewController: BaseViewController {
                     .onNext(value)
             }
             .disposed(by: disposeBag)
-        
-//        viewModel.validataion
-//            .withUnretained(self)
-//            .
+
             
         viewModel.phoneValidataion
             .withUnretained(self)
@@ -95,15 +92,7 @@ final class PhoneAuthoViewController: BaseViewController {
     }
     
     func sendRequest() {
-//        viewModel.phoneNumber
-//            .map { $0.replacingOccurrences(of: "-", with: "") }
-//            .withUnretained(self)
-//            .bind { (vc, value) in
-//                vc.requestPhoneAuth(phoneNumber: value)
-//                print("ddddd",value)
-//            }
-//            .disposed(by: disposeBag)
-        
+
         mainView.userTextField.rx.text //viewmodel로
             .orEmpty
             .map { $0.replacingOccurrences(of: "-", with: "") }
@@ -111,24 +100,21 @@ final class PhoneAuthoViewController: BaseViewController {
             .withUnretained(self)
             .bind { (vc, value) in
                 vc.requestPhoneAuth(phoneNumber: value)
-                print("ddddd",value)
             }
             .dispose()
         
      
     }
     
-    func requestPhoneAuth(phoneNumber: String) {
+    func requestPhoneAuth(phoneNumber: String) { //에러메시지별 토스트 한글로 띄우기
         Auth.auth().languageCode = "kr"
         PhoneAuthProvider.provider()
           .verifyPhoneNumber(phoneNumber, uiDelegate: nil) { [weak self] verificationID, error in
               if let error = error {
                   self?.mainView.makeToast(error.localizedDescription)
                   print("error",error.localizedDescription)
-                
                 return
               }
-              
               UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
               print("success",verificationID)
               self?.transition(EnterPhoneNumberViewController(), transitionStyle: .push)
