@@ -9,8 +9,6 @@ import UIKit
 
 import Toast
 import FirebaseAuth
-//import RxCocoa
-//import RxSwift
 
 
 final class PhoneAuthoViewController: BaseViewController {

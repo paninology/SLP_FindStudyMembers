@@ -6,8 +6,6 @@
 //
 import UIKit
 
-import RxCocoa
-import RxSwift
 
 final class EmailViewController: BaseViewController {
   

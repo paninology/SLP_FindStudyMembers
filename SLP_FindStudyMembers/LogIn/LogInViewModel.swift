@@ -21,11 +21,19 @@ final class LogInViewModel {
     
     let birthday = BehaviorSubject<Date>(value: Date())
     
-    var ageValidation = true
+    var ageValidation = false
+    
+    let authNumber = PublishSubject<String>()
+    
+    var authNumValidation = false
+    
+    let userNickName = PublishSubject<String>()
+    
+    var nicknameValidation = false
     
     let userEmail = PublishSubject<String>()
     
-    var emailValidation = true
+    var emailValidation = false
     
     let userGender = PublishSubject<Int>() //0:남 1:여
     
@@ -46,6 +54,24 @@ final class LogInViewModel {
 
         phoneValidataion.onNext(input)
         
+    }
+    func checkAuthNumValidation() {
+        authNumber
+            .map { $0.count == 6}
+            .withUnretained(self)
+            .subscribe { (vc,value) in
+                vc.authNumValidation = value
+            }
+            .disposed(by: disposeBag)
+    }
+    func checknicknameValidation() {
+        userNickName
+            .map { $0.count <= 10 && $0.count >= 1}
+            .withUnretained(self)
+            .subscribe { (vc,value) in
+                vc.nicknameValidation = value
+            }
+            .disposed(by: disposeBag)
     }
     
     func checkAgeValidation() {

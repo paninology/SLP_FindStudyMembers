@@ -7,8 +7,6 @@
 
 import UIKit
 
-import RxSwift
-import RxCocoa
 import Toast
 
 class BirthdayViewController: BaseViewController {
