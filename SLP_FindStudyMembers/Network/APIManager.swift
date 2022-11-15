@@ -17,8 +17,25 @@ class APIManager {
     private init() {}
     
     func requestSignIn() {
-        let url = EndPoint.SeSACBaseURL + "/v1/" + URLSuffix.user.rawValue
+//        let url = EndPoint.SeSACBaseURL + "/v1/" + URLSuffix.user.rawValue
+        let api = SeSACStudyAPI.signIn(
+            phoneNumber: UserDefaultManager.getUserDefault(key: .phoneNumber),
+            FCMtoken: UserDefaultManager.getUserDefault(key: .phoneNumber),
+            nick: UserDefaultManager.getUserDefault(key: .nickName),
+            birth: UserDefaultManager.getUserDefault(key: .birthday),
+            email: UserDefaultManager.getUserDefault(key: .userEmail),
+            gender: UserDefaults.standard.integer(forKey: "\(userDefaultData.gender)")
+        )
         
-//        AF.request(url, method: .get, parameters: <#T##Encodable?#>, encoder: <#T##ParameterEncoder#>, headers: <#T##HTTPHeaders?#>, interceptor: <#T##RequestInterceptor?#>, requestModifier: <#T##Session.RequestModifier?##Session.RequestModifier?##(inout URLRequest) throws -> Void#>)
+        AF.request(api.url, method: .get, parameters: api.parameters, headers: api.headers).responseString { response in
+            switch response.result {
+            case.success(let data):
+                print("success", data)
+                print(response.response?.statusCode)
+            case.failure(let error):
+                print(error)
+                print(response.response?.statusCode)
+            }
+        }
     }
 }
