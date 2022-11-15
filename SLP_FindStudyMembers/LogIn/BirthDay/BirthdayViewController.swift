@@ -36,7 +36,7 @@ class BirthdayViewController: BaseViewController {
         mainView.confirmButton.rx
             .tap
             .withUnretained(self)
-            .bind { (vc,_) in
+            .bind { (vc,value) in
                 if vc.viewModel.ageValidation {
                     vc.transition(EmailViewController(), transitionStyle: .push)
                 } else {
@@ -48,6 +48,7 @@ class BirthdayViewController: BaseViewController {
         viewModel.birthday
             .withUnretained(self)
             .subscribe { (vc, value) in
+                
                 let formatter = DateFormatter()
                 formatter.dateFormat = "YYYY"
                 vc.mainView.yearLabel.text = formatter.string(from: value)
@@ -55,6 +56,8 @@ class BirthdayViewController: BaseViewController {
                 vc.mainView.monthLabel.text = formatter.string(from: value)
                 formatter.dateFormat = "dd"
                 vc.mainView.dayLabel.text = formatter.string(from: value)
+                formatter.dateFormat = "YYYY-MM-DDTHH:mm:ss.SSSZ"
+                UserDefaultManager.setUserDefault(key: .birthday, value: value)
             }
             .disposed(by: disposeBag)
         

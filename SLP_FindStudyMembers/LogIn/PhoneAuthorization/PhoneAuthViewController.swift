@@ -97,6 +97,7 @@ final class PhoneAuthoViewController: BaseViewController {
             .map { "+82" + $0.dropFirst() }
             .withUnretained(self)
             .bind { (vc, value) in
+                UserDefaultManager.setUserDefault(key: .phoneNumber, value: value)
                 vc.requestPhoneAuth(phoneNumber: value)
             }
             .dispose()

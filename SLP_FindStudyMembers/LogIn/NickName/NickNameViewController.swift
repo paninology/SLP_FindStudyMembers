@@ -38,6 +38,11 @@ final class NickNameViewController: BaseViewController {
                     vc.mainView.makeToast("닉네임은 1자 이상 10자 이내로 부탁드려요.", position: .top)
                 }
             }
+        viewModel.userNickName //버튼탭하면 저장되게 바꾸고싶은데
+            .bind { value in
+                UserDefaultManager.setUserDefault(key: .nickName, value: value)
+            }
+            .disposed(by: disposeBag)
         
         viewModel.checknicknameValidation()
     }

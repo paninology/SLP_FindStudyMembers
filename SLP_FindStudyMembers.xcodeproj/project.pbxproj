@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F3DE1E0292282550009D638 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3DE1DF292282550009D638 /* APIKeys.swift */; };
+		8F3DE1E2292282740009D638 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3DE1E1292282740009D638 /* APIManager.swift */; };
+		8F3DE1E62922855F0009D638 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8F3DE1E52922855F0009D638 /* Alamofire */; };
 		8F3FA5B4291B2A3100379423 /* NickNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3FA5B3291B2A3100379423 /* NickNameView.swift */; };
 		8F3FA5B6291B2F5D00379423 /* NickNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3FA5B5291B2F5D00379423 /* NickNameViewController.swift */; };
 		8F3FA5C4291B850000379423 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8F3FA5C3291B850000379423 /* .gitignore */; };
@@ -42,6 +45,8 @@
 		8F4245AF29194CAD00DDC3BE /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8F4245AE29194CAD00DDC3BE /* RxSwift */; };
 		8F4245B129194EA700DDC3BE /* EnterPhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4245B029194EA700DDC3BE /* EnterPhoneNumberView.swift */; };
 		8F4245B3291951FB00DDC3BE /* EnterPhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4245B2291951FB00DDC3BE /* EnterPhoneNumberViewController.swift */; };
+		8F447E232923173300E7D19D /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F447E222923173300E7D19D /* EndPoint.swift */; };
+		8F447E26292357F700E7D19D /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F447E25292357F700E7D19D /* UserDefaultManager.swift */; };
 		8F564CA129210FB40035329C /* GenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F564CA029210FB40035329C /* GenderView.swift */; };
 		8F564CA329210FBD0035329C /* GenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F564CA229210FBD0035329C /* GenderViewController.swift */; };
 		8F6082B2291F89D4008B6E58 /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6082B1291F89D4008B6E58 /* EmailView.swift */; };
@@ -49,6 +54,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8F3DE1DF292282550009D638 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
+		8F3DE1E1292282740009D638 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		8F3FA5B3291B2A3100379423 /* NickNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameView.swift; sourceTree = "<group>"; };
 		8F3FA5B5291B2F5D00379423 /* NickNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameViewController.swift; sourceTree = "<group>"; };
 		8F3FA5C3291B850000379423 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -80,6 +87,8 @@
 		8F4245A829194C1E00DDC3BE /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
 		8F4245B029194EA700DDC3BE /* EnterPhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneNumberView.swift; sourceTree = "<group>"; };
 		8F4245B2291951FB00DDC3BE /* EnterPhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneNumberViewController.swift; sourceTree = "<group>"; };
+		8F447E222923173300E7D19D /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		8F447E25292357F700E7D19D /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		8F564CA029210FB40035329C /* GenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderView.swift; sourceTree = "<group>"; };
 		8F564CA229210FBD0035329C /* GenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewController.swift; sourceTree = "<group>"; };
 		8F6082B1291F89D4008B6E58 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
@@ -91,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F3DE1E62922855F0009D638 /* Alamofire in Frameworks */,
 				8F3FA5CF291BA55400379423 /* FirebaseMessaging in Frameworks */,
 				8F4003FF291A9EE20040D91B /* Toast in Frameworks */,
 				8F3FA5CB291BA55400379423 /* FirebaseAuth in Frameworks */,
@@ -105,6 +115,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8F3DE1DE292282370009D638 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8F3DE1DF292282550009D638 /* APIKeys.swift */,
+				8F3DE1E1292282740009D638 /* APIManager.swift */,
+				8F447E222923173300E7D19D /* EndPoint.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		8F3FA5B2291B2A1600379423 /* NickName */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				8F4003F8291A29DD0040D91B /* Transition+Extensions.swift */,
+				8F447E25292357F700E7D19D /* UserDefaultManager.swift */,
 				8F4003FA291A593E0040D91B /* String+Extension.swift */,
 			);
 			path = Extensions;
@@ -159,6 +180,7 @@
 				8F4245732918D45200DDC3BE /* ViewController.swift */,
 				8F4245752918D45200DDC3BE /* Main.storyboard */,
 				8F4003F7291A29AA0040D91B /* Extensions */,
+				8F3DE1DE292282370009D638 /* Network */,
 				8F4245972919023F00DDC3BE /* Constants */,
 				8F42458F2918FEF800DDC3BE /* Utility */,
 				8F42458B2918DD0A00DDC3BE /* Intro */,
@@ -275,6 +297,7 @@
 				8F3FA5CA291BA55400379423 /* FirebaseAuth */,
 				8F3FA5CC291BA55400379423 /* FirebaseCrashlytics */,
 				8F3FA5CE291BA55400379423 /* FirebaseMessaging */,
+				8F3DE1E52922855F0009D638 /* Alamofire */,
 			);
 			productName = SLP_FindStudyMembers;
 			productReference = 8F42456C2918D45200DDC3BE /* SLP_FindStudyMembers.app */;
@@ -309,6 +332,7 @@
 				8F4245AB29194CAD00DDC3BE /* XCRemoteSwiftPackageReference "RxSwift" */,
 				8F4003FD291A9EE20040D91B /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				8F3FA5C7291BA55400379423 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				8F3DE1E42922855F0009D638 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 8F42456D2918D45200DDC3BE /* Products */;
 			projectDirPath = "";
@@ -340,8 +364,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F447E26292357F700E7D19D /* UserDefaultManager.swift in Sources */,
 				8F3FA5B4291B2A3100379423 /* NickNameView.swift in Sources */,
 				8F42459C291903B000DDC3BE /* CustomButtons.swift in Sources */,
+				8F3DE1E0292282550009D638 /* APIKeys.swift in Sources */,
+				8F3DE1E2292282740009D638 /* APIManager.swift in Sources */,
 				8F3FA5B6291B2F5D00379423 /* NickNameViewController.swift in Sources */,
 				8F564CA129210FB40035329C /* GenderView.swift in Sources */,
 				8F6082B2291F89D4008B6E58 /* EmailView.swift in Sources */,
@@ -364,6 +391,7 @@
 				8F4245722918D45200DDC3BE /* SceneDelegate.swift in Sources */,
 				8F4245A529190CD400DDC3BE /* PhoneAuthView.swift in Sources */,
 				8F4245B3291951FB00DDC3BE /* EnterPhoneNumberViewController.swift in Sources */,
+				8F447E232923173300E7D19D /* EndPoint.swift in Sources */,
 				8F3FA5D4291BE76100379423 /* BirthdayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -592,6 +620,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		8F3DE1E42922855F0009D638 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		8F3FA5C7291BA55400379423 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -627,6 +663,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8F3DE1E52922855F0009D638 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F3DE1E42922855F0009D638 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		8F3FA5C8291BA55400379423 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8F3FA5C7291BA55400379423 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

@@ -26,6 +26,15 @@ class GenderViewController: BaseViewController {
     }
     
     func UIBind() {
+        mainView.confirmButton.rx.tap
+            .bind { _ in
+                print(UserDefaultManager.getUserDefault(key: .phoneNumber))
+                print(UserDefaultManager.getUserDefault(key: .nickName))
+                print(UserDefaultManager.getUserDefault(key: .idToken))
+                print(UserDefaultManager.getUserDefault(key: .userEmail))
+                print(UserDefaultManager.getUserDefault(key: .birthday))
+                print(UserDefaultManager.getUserDefault(key: .gender))
+            }
         
         mainView.maleButton.rx.tap
             .map {0}
@@ -41,6 +50,7 @@ class GenderViewController: BaseViewController {
         viewModel.userGender
             .withUnretained(self)
             .bind { (vc,value) in
+                UserDefaultManager.setUserDefault(key: .gender, value: value)
                 switch value {
                 case 0: maleOn()
                 case 1: femaleOn()

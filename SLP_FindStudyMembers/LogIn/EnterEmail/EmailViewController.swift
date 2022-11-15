@@ -32,6 +32,7 @@ final class EmailViewController: BaseViewController {
             .withUnretained(self)
             .bind { (vc, value) in
                 vc.viewModel.userEmail.onNext(value)
+                UserDefaultManager.setUserDefault(key: .userEmail, value: value)
                 let color =  vc.viewModel.emailValidation ? Constants.Color.customGreen : UIColor.systemGray3
                 vc.mainView.confirmButton.backgroundColor = color
                 
