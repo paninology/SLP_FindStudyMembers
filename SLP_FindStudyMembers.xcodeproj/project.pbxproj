@@ -13,7 +13,6 @@
 		8F3FA5B4291B2A3100379423 /* NickNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3FA5B3291B2A3100379423 /* NickNameView.swift */; };
 		8F3FA5B6291B2F5D00379423 /* NickNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3FA5B5291B2F5D00379423 /* NickNameViewController.swift */; };
 		8F3FA5C4291B850000379423 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8F3FA5C3291B850000379423 /* .gitignore */; };
-		8F3FA5C6291B855E00379423 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8F3FA5C5291B855E00379423 /* GoogleService-Info.plist */; };
 		8F3FA5C9291BA55400379423 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 8F3FA5C8291BA55400379423 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		8F3FA5CB291BA55400379423 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8F3FA5CA291BA55400379423 /* FirebaseAuth */; };
 		8F3FA5CD291BA55400379423 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8F3FA5CC291BA55400379423 /* FirebaseCrashlytics */; };
@@ -47,6 +46,7 @@
 		8F4245B3291951FB00DDC3BE /* EnterPhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4245B2291951FB00DDC3BE /* EnterPhoneNumberViewController.swift */; };
 		8F447E232923173300E7D19D /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F447E222923173300E7D19D /* EndPoint.swift */; };
 		8F447E26292357F700E7D19D /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F447E25292357F700E7D19D /* UserDefaultManager.swift */; };
+		8F447E28292395B100E7D19D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8F447E27292395B100E7D19D /* GoogleService-Info.plist */; };
 		8F564CA129210FB40035329C /* GenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F564CA029210FB40035329C /* GenderView.swift */; };
 		8F564CA329210FBD0035329C /* GenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F564CA229210FBD0035329C /* GenderViewController.swift */; };
 		8F6082B2291F89D4008B6E58 /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6082B1291F89D4008B6E58 /* EmailView.swift */; };
@@ -59,7 +59,6 @@
 		8F3FA5B3291B2A3100379423 /* NickNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameView.swift; sourceTree = "<group>"; };
 		8F3FA5B5291B2F5D00379423 /* NickNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameViewController.swift; sourceTree = "<group>"; };
 		8F3FA5C3291B850000379423 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		8F3FA5C5291B855E00379423 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8F3FA5D1291BDC8900379423 /* BirthdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayView.swift; sourceTree = "<group>"; };
 		8F3FA5D3291BE76100379423 /* BirthdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewController.swift; sourceTree = "<group>"; };
 		8F4003F2291A22220040D91B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +88,7 @@
 		8F4245B2291951FB00DDC3BE /* EnterPhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterPhoneNumberViewController.swift; sourceTree = "<group>"; };
 		8F447E222923173300E7D19D /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		8F447E25292357F700E7D19D /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
+		8F447E27292395B100E7D19D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8F564CA029210FB40035329C /* GenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderView.swift; sourceTree = "<group>"; };
 		8F564CA229210FBD0035329C /* GenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewController.swift; sourceTree = "<group>"; };
 		8F6082B1291F89D4008B6E58 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
@@ -187,7 +187,7 @@
 				8F42458C2918FE4A00DDC3BE /* LogIn */,
 				8F4245782918D45300DDC3BE /* Assets.xcassets */,
 				8F42457A2918D45300DDC3BE /* LaunchScreen.storyboard */,
-				8F3FA5C5291B855E00379423 /* GoogleService-Info.plist */,
+				8F447E27292395B100E7D19D /* GoogleService-Info.plist */,
 				8F42457D2918D45300DDC3BE /* Info.plist */,
 			);
 			path = SLP_FindStudyMembers;
@@ -349,11 +349,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F42457C2918D45300DDC3BE /* LaunchScreen.storyboard in Resources */,
-				8F3FA5C6291B855E00379423 /* GoogleService-Info.plist in Resources */,
 				8F4245792918D45300DDC3BE /* Assets.xcassets in Resources */,
 				8F4245772918D45200DDC3BE /* Main.storyboard in Resources */,
 				8F3FA5C4291B850000379423 /* .gitignore in Resources */,
 				8F42458A2918DD0500DDC3BE /* Intro.storyboard in Resources */,
+				8F447E28292395B100E7D19D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,7 +553,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ohlee.SLP-FindStudyMembers";
+				PRODUCT_BUNDLE_IDENTIFIER = com.memolease.sesacslp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -585,7 +585,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ohlee.SLP-FindStudyMembers";
+				PRODUCT_BUNDLE_IDENTIFIER = com.memolease.sesacslp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
