@@ -56,8 +56,14 @@ class BirthdayViewController: BaseViewController {
                 vc.mainView.monthLabel.text = formatter.string(from: value)
                 formatter.dateFormat = "dd"
                 vc.mainView.dayLabel.text = formatter.string(from: value)
-                formatter.dateFormat = "YYYY-MM-DDTHH:mm:ss.SSSZ"
-                UserDefaultManager.setUserDefault(key: .birthday, value: value)
+                let newFormatter = DateFormatter()
+//                newFormatter.dateFormat = "YYYY-MM-DDTHH:mm:ss.SSSZ"
+//                UserDefaultManager.setUserDefault(key: .birthday, value: newFormatter.string(from: value))
+                UserDefaults.standard.set(value, forKey: "birthday")
+                print(value, newFormatter.string(from: value))
+                print(value)
+                print(UserDefaults.standard.string(forKey: "birthday"))
+//                print(UserDefaults.standard.(forKey: "birthday"))
             }
             .disposed(by: disposeBag)
         

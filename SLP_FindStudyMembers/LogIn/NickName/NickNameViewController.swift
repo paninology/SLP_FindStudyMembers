@@ -39,8 +39,11 @@ final class NickNameViewController: BaseViewController {
                 }
             }
         viewModel.userNickName //버튼탭하면 저장되게 바꾸고싶은데
-            .bind { value in
+            .withUnretained(self)
+            .bind { (vc,value) in
                 UserDefaultManager.setUserDefault(key: .nickName, value: value)
+                let color =  vc.viewModel.nicknameValidation ? Constants.Color.customGreen : UIColor.systemGray3
+                vc.mainView.confirmButton.backgroundColor = color
             }
             .disposed(by: disposeBag)
         

@@ -15,14 +15,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-
-//        let vc = PhoneAuthoViewController()
-        let vc = PhoneAuthoViewController()
-        let navi = UINavigationController(rootViewController: vc)
-        
-        window?.rootViewController = navi
-        
         window?.makeKeyAndVisible()
+        
+//        let vc = PhoneAuthoViewController()
+        
+        
+        if UserDefaultManager.getUserDefault(key: .idToken) != nil {
+//            let vc = NickNameViewController()
+            let vc = BirthdayViewController()
+            let navi = UINavigationController(rootViewController: vc)
+            window?.rootViewController = navi
+        } else {
+            let vc = PhoneAuthoViewController()
+            let navi = UINavigationController(rootViewController: vc)
+            window?.rootViewController = navi
+        }
+        
+       
+        
       
     }
 

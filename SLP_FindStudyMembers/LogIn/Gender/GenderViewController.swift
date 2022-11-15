@@ -33,7 +33,9 @@ class GenderViewController: BaseViewController {
                 print(UserDefaultManager.getUserDefault(key: .idToken))
                 print(UserDefaultManager.getUserDefault(key: .userEmail))
                 print(UserDefaultManager.getUserDefault(key: .birthday))
+                print(UserDefaults.standard.string(forKey: "birthday"))
                 print(UserDefaultManager.getUserDefault(key: .gender))
+                APIManager.share.requestSignIn()
             }
         
         mainView.maleButton.rx.tap

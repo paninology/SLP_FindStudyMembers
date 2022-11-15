@@ -28,3 +28,6 @@
 11.14
     isMFAEnabled
     네트워크 하는중
+    
+    11.15
+    date userdefalut 저장이슈
