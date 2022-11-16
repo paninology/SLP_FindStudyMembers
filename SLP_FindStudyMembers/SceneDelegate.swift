@@ -18,18 +18,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
         
 //        let vc = PhoneAuthoViewController()
+        let home = TabBarController()
+        self.window?.rootViewController = home
+    
         
-        
-        if UserDefaultManager.getUserDefault(key: .idToken) != nil {
-            let vc = NickNameViewController()
-//            let vc = GenderViewController()
-            let navi = UINavigationController(rootViewController: vc)
-            window?.rootViewController = navi
-        } else {
-            let vc = PhoneAuthoViewController()
-            let navi = UINavigationController(rootViewController: vc)
-            window?.rootViewController = navi
-        }
+//        if UserDefaultManager.getUserDefault(key: .idToken) != nil {
+//            let vc = NickNameViewController()
+////            let vc = GenderViewController()
+//            let navi = UINavigationController(rootViewController: vc)
+//            window?.rootViewController = navi
+//        } else {
+//            let vc = PhoneAuthoViewController()
+//            let navi = UINavigationController(rootViewController: vc)
+//            window?.rootViewController = navi
+//        }
         
        
         

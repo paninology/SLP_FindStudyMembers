@@ -44,6 +44,7 @@ class APIManager {
                 print("error",error)
                 print("status",response.response?.statusCode)
                 if response.response?.statusCode == 406 { completion() }
+                if response.response?.statusCode == 202 { print("부적절한 아이디.") } //화면전환 필요
             }
         }
     }
