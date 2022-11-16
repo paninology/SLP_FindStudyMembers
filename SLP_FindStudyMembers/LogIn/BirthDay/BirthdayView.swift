@@ -79,6 +79,7 @@ final class BirthdayView: LogInView {
         view.datePickerMode = .date
         view.preferredDatePickerStyle = .wheels
         view.maximumDate = Date()
+        view.locale = .current
 //        view.setDate(Date(timeIntervalSince1970: 200000000), animated: true)
         return view
     }()

@@ -60,9 +60,11 @@ class BirthdayViewController: BaseViewController {
 //                newFormatter.dateFormat = "YYYY-MM-DDTHH:mm:ss.SSSZ"
 //                UserDefaultManager.setUserDefault(key: .birthday, value: newFormatter.string(from: value))
                 UserDefaults.standard.set(value, forKey: "birthday")
-                print(value, newFormatter.string(from: value))
-                print(value)
-                print(UserDefaults.standard.string(forKey: "birthday"))
+                
+                print("1",value, newFormatter.string(from: value))
+                print("2",value)
+                print("3",UserDefaults.standard.string(forKey: "birthday"))
+                print("4",UserDefaults.standard.value(forKey: "birthday"))
 //                print(UserDefaults.standard.(forKey: "birthday"))
             }
             .disposed(by: disposeBag)

@@ -28,24 +28,20 @@ class GenderViewController: BaseViewController {
     func UIBind() {
         mainView.confirmButton.rx.tap
             .bind { _ in
-                print(UserDefaultManager.getUserDefault(key: .phoneNumber))
-                print(UserDefaultManager.getUserDefault(key: .nickName))
-                print(UserDefaultManager.getUserDefault(key: .idToken))
-                print(UserDefaultManager.getUserDefault(key: .userEmail))
-                print(UserDefaultManager.getUserDefault(key: .birthday))
-                print(UserDefaults.standard.string(forKey: "birthday"))
-                print(UserDefaultManager.getUserDefault(key: .gender))
-                APIManager.share.requestSignIn()
+                APIManager.share.requestSignIn {
+                    print("메인으로 고고씽")
+                }
             }
+            .disposed(by: disposeBag)
         
         mainView.maleButton.rx.tap
-            .map {0}
+            .map {1}
 //            .withUnretained(self)
             .bind (to: viewModel.userGender)
             .disposed(by: disposeBag)
         
         mainView.femaleButton.rx.tap
-            .map {1}
+            .map {0}
             .bind (to: viewModel.userGender)
             .disposed(by: disposeBag)
         
@@ -54,8 +50,8 @@ class GenderViewController: BaseViewController {
             .bind { (vc,value) in
                 UserDefaultManager.setUserDefault(key: .gender, value: value)
                 switch value {
-                case 0: maleOn()
-                case 1: femaleOn()
+                case 1: maleOn()
+                case 0: femaleOn()
                 default: bothOff()
                 }
             }

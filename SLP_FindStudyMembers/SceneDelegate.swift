@@ -21,8 +21,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         
         if UserDefaultManager.getUserDefault(key: .idToken) != nil {
-//            let vc = NickNameViewController()
-            let vc = BirthdayViewController()
+            let vc = NickNameViewController()
+//            let vc = GenderViewController()
             let navi = UINavigationController(rootViewController: vc)
             window?.rootViewController = navi
         } else {

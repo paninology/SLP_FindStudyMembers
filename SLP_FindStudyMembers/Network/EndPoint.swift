@@ -25,9 +25,8 @@ extension SeSACStudyAPI {
     var headers: HTTPHeaders {
         switch self {
         case .signIn, .logIn:
-            print(UserDefaultManager.getUserDefault(key: .idToken))
             return [
-                "Authorizaion": "Bearer \(UserDefaultManager.getUserDefault(key: .idToken))!)",
+                "idtoken": "\(UserDefaultManager.getUserDefault(key: .idToken))",
                 "Content-Type": "application/x-www-form-urlencoded"
             ]
         }

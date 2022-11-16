@@ -31,7 +31,6 @@
 		8F42457C2918D45300DDC3BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F42457A2918D45300DDC3BE /* LaunchScreen.storyboard */; };
 		8F42458A2918DD0500DDC3BE /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F4245892918DD0500DDC3BE /* Intro.storyboard */; };
 		8F42458E2918FE9600DDC3BE /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F42458D2918FE9600DDC3BE /* LogInView.swift */; };
-		8F4245912919005900DDC3BE /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4245902919005900DDC3BE /* LogInViewController.swift */; };
 		8F4245942919007300DDC3BE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8F4245932919007300DDC3BE /* SnapKit */; };
 		8F424596291900DC00DDC3BE /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F424595291900DC00DDC3BE /* BaseView.swift */; };
 		8F4245992919025B00DDC3BE /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4245982919025B00DDC3BE /* Color.swift */; };
@@ -74,7 +73,6 @@
 		8F42457D2918D45300DDC3BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F4245892918DD0500DDC3BE /* Intro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
 		8F42458D2918FE9600DDC3BE /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
-		8F4245902919005900DDC3BE /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		8F424595291900DC00DDC3BE /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		8F4245982919025B00DDC3BE /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		8F42459B291903B000DDC3BE /* CustomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
@@ -115,6 +113,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8F3380332924B9D2009AF898 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		8F3DE1DE292282370009D638 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +190,7 @@
 				8F42458F2918FEF800DDC3BE /* Utility */,
 				8F42458B2918DD0A00DDC3BE /* Intro */,
 				8F42458C2918FE4A00DDC3BE /* LogIn */,
+				8F3380332924B9D2009AF898 /* Main */,
 				8F4245782918D45300DDC3BE /* Assets.xcassets */,
 				8F42457A2918D45300DDC3BE /* LaunchScreen.storyboard */,
 				8F447E27292395B100E7D19D /* GoogleService-Info.plist */,
@@ -206,7 +212,6 @@
 			children = (
 				8F42458D2918FE9600DDC3BE /* LogInView.swift */,
 				8F4245A829194C1E00DDC3BE /* LogInViewModel.swift */,
-				8F4245902919005900DDC3BE /* LogInViewController.swift */,
 				8F4245A329190C9A00DDC3BE /* PhoneAuthorization */,
 				8F3FA5B2291B2A1600379423 /* NickName */,
 				8F3FA5D0291BDC5800379423 /* BirthDay */,
@@ -387,7 +392,6 @@
 				8F424596291900DC00DDC3BE /* BaseView.swift in Sources */,
 				8F4245B129194EA700DDC3BE /* EnterPhoneNumberView.swift in Sources */,
 				8F3FA5D2291BDC8900379423 /* BirthdayView.swift in Sources */,
-				8F4245912919005900DDC3BE /* LogInViewController.swift in Sources */,
 				8F4245722918D45200DDC3BE /* SceneDelegate.swift in Sources */,
 				8F4245A529190CD400DDC3BE /* PhoneAuthView.swift in Sources */,
 				8F4245B3291951FB00DDC3BE /* EnterPhoneNumberViewController.swift in Sources */,
