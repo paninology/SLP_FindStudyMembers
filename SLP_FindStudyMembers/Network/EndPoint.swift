@@ -26,7 +26,7 @@ extension SeSACStudyAPI {
         switch self {
         case .signIn, .logIn:
             return [
-                "idtoken": "\(UserDefaultManager.getUserDefault(key: .idToken))",
+                "idtoken": UserDefaultManager.getUserDefault(key: .idToken),
                 "Content-Type": "application/x-www-form-urlencoded"
             ]
         }

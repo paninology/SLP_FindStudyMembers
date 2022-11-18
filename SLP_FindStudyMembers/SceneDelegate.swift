@@ -18,21 +18,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
         
 //        let vc = PhoneAuthoViewController()
-        let home = TabBarController()
-        let navi = UINavigationController(rootViewController: home)
-        self.window?.rootViewController = navi
+        
+//        let home = TabBarController()
+//        let navi = UINavigationController(rootViewController: home)
+//        self.window?.rootViewController = navi
     
         //아래가 정상. 위는 테스트용
-//        if UserDefaultManager.getUserDefault(key: .idToken) != nil {
-//            let vc = NickNameViewController()
-////            let vc = GenderViewController()
-//            let navi = UINavigationController(rootViewController: vc)
-//            window?.rootViewController = navi
-//        } else {
-//            let vc = PhoneAuthoViewController()
-//            let navi = UINavigationController(rootViewController: vc)
-//            window?.rootViewController = navi
-//        }
+        // 1. 첫 사용자 >> 아이디토큰 없음/ 서버 미가입 >> 번호인증 후 회원가입절차
+        // 1-2. 첫 사용자(파베 인증만 완료. 중도에 앱끔) >> 아이디토큰 있음/ 겟서버통신 406 >> 바로 회원가입창(닉네임)
+        // 2. 타기기 사용자 >> 아이디토큰 없음/ 서버 기가입 >> 번호인증 후 홈탭으로
+        // 3. 기존(같은기기) 사용자 >>아이디토큰 있음/ 겟서버통신200>> 서버 회원가입 유무 네트워크 판단 >> 신델리게이트에서 바로 홈탭
+        // 아이디토큰 유무검사 >>토큰 없으면 일단 번호인증>>토큰받고 겟 서버통신으로 가입유무 판단
+        UserDefaults.standard.removeObject(forKey: "\(userDefaultData.idToken)")
+        print("dddddd",UserDefaultManager.getUserDefault(key: .idToken))
+        
+        if UserDefaultManager.getUserDefault(key: .idToken) != "" {
+            let vc = NickNameViewController()
+            let navi = UINavigationController(rootViewController: vc)
+            window?.rootViewController = navi
+        } else {
+            let vc = PhoneAuthoViewController()
+            let navi = UINavigationController(rootViewController: vc)
+            window?.rootViewController = navi
+        }
         
        
         

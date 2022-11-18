@@ -35,8 +35,7 @@ final class EnterPhoneNumberViewController: BaseViewController {
             .withUnretained(self)
             .bind { (vc,_) in
                 if vc.viewModel.authNumValidation {
-                    vc.requestSignIn(verificationCode: vc.verificationCode)
-//                    vc.transition(NickNameViewController(), transitionStyle: .push)
+                    vc.requestFBAuth(verificationCode: vc.verificationCode)
                 } else {
                     vc.mainView.makeToast("인증번호는 6자리를 입력해주세요", position: .top)
                 }
@@ -61,7 +60,9 @@ final class EnterPhoneNumberViewController: BaseViewController {
             .disposed(by: disposeBag)
     }
     
-    func requestSignIn(verificationCode: String) {
+    
+    
+    func requestFBAuth(verificationCode: String) { //apimanager로 이동
         
         guard let id = UserDefaults.standard.string(forKey: "authVerificationID") else { //id 새로 받기
             print("invalid ID")
@@ -103,10 +104,22 @@ final class EnterPhoneNumberViewController: BaseViewController {
 //                UserDefaultManager.idToken = idToken
                 UserDefaultManager.setUserDefault(key: .idToken, value: idToken)
                 print(idToken)
-                print("UD Value", UserDefaultManager.getUserDefault(key: .idToken))
+                print("iD Value", UserDefaultManager.getUserDefault(key: .idToken))
             }
             print("signed in")
-            self?.transition(NickNameViewController(), transitionStyle: .push)
+            
+            APIManager.share.getUserInfo { code in
+                
+                if code == 406 { //서버 미가입자
+                    self?.mainView.makeToast("인증성공. 회원가입 절차를 시작합니다.", position: .top)
+                    self?.transition(NickNameViewController(), transitionStyle: .push)
+                }else if code == 200 { //서버 기가입자
+                    self?.mainView.makeToast("이미 가입된 사용자입니다.", position: .top)
+                    self?.transition(TabBarController(), transitionStyle: .push)
+                }
+            }
+            
+//            self?.transition(NickNameViewController(), transitionStyle: .push)
         }
     }
     

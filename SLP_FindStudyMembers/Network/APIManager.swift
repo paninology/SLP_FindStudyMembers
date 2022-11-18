@@ -34,7 +34,7 @@ class APIManager {
 
         refreshIDToken()
         
-        AF.request(api.url, method: .get, parameters: api.parameters, headers: api.headers).responseString { response in
+        AF.request(api.url, method: .post, parameters: api.parameters, headers: api.headers).responseString { response in
 
             switch response.result {
             case.success(let data):
@@ -43,7 +43,7 @@ class APIManager {
             case.failure(let error):
                 print("error",error)
                 print("status",response.response?.statusCode)
-                if response.response?.statusCode == 406 { completion() }
+//                if response.response?.statusCode == 406 { completion() } //???
                 if response.response?.statusCode == 202 { print("부적절한 아이디.") } //화면전환 필요
             }
         }
@@ -61,6 +61,29 @@ class APIManager {
             print("refreshed idtoken", idToken)
           // Send token to your backend via HTTPS
           // ...
+        }
+    }
+    
+    func getUserInfo( completion: @escaping ((Int?)->Void)) {
+      
+    
+        let api = SeSACStudyAPI.logIn
+      
+        AF.request(api.url, method: .get, headers: api.headers).responseDecodable(of: MyInfo.self) { response in
+
+            switch response.result {
+            case.success(let data):
+                print("Loginsuccess", data)
+                print("login status", response.response?.statusCode)
+                print(api.headers, api.parameters)
+                completion(response.response?.statusCode)
+               
+            case.failure(let error):
+                print("error",error)
+                print("err status",response.response?.statusCode)
+                if response.response?.statusCode == 406 {  }
+                if response.response?.statusCode == 202 { print("부적절한 아이디.") } //화면전환 필요
+            }
         }
     }
 }

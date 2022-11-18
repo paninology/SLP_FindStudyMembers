@@ -60,6 +60,7 @@
 		8F564CA329210FBD0035329C /* GenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F564CA229210FBD0035329C /* GenderViewController.swift */; };
 		8F5B7D26292710A10022554B /* WithdrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5B7D25292710A10022554B /* WithdrawViewController.swift */; };
 		8F5B7D2A29274F560022554B /* MultiSlider in Frameworks */ = {isa = PBXBuildFile; productRef = 8F5B7D2929274F560022554B /* MultiSlider */; };
+		8F5B7D2D29277DDA0022554B /* MyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5B7D2C29277DDA0022554B /* MyInfo.swift */; };
 		8F6082B2291F89D4008B6E58 /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6082B1291F89D4008B6E58 /* EmailView.swift */; };
 		8F6082B4291F8A98008B6E58 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6082B3291F8A98008B6E58 /* EmailViewController.swift */; };
 /* End PBXBuildFile section */
@@ -112,6 +113,7 @@
 		8F564CA029210FB40035329C /* GenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderView.swift; sourceTree = "<group>"; };
 		8F564CA229210FBD0035329C /* GenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewController.swift; sourceTree = "<group>"; };
 		8F5B7D25292710A10022554B /* WithdrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawViewController.swift; sourceTree = "<group>"; };
+		8F5B7D2C29277DDA0022554B /* MyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfo.swift; sourceTree = "<group>"; };
 		8F6082B1291F89D4008B6E58 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 		8F6082B3291F8A98008B6E58 /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -254,6 +256,7 @@
 				8F3DE1DE292282370009D638 /* Network */,
 				8F4245972919023F00DDC3BE /* Constants */,
 				8F42458F2918FEF800DDC3BE /* Utility */,
+				8F5B7D2B29277DA40022554B /* Models */,
 				8F42458B2918DD0A00DDC3BE /* Intro */,
 				8F42458C2918FE4A00DDC3BE /* LogIn */,
 				8F3380332924B9D2009AF898 /* Main */,
@@ -333,6 +336,14 @@
 				8F564CA229210FBD0035329C /* GenderViewController.swift */,
 			);
 			path = Gender;
+			sourceTree = "<group>";
+		};
+		8F5B7D2B29277DA40022554B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8F5B7D2C29277DDA0022554B /* MyInfo.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		8F6082B0291F89BB008B6E58 /* EnterEmail */ = {
@@ -466,6 +477,7 @@
 				8F42458E2918FE9600DDC3BE /* LogInView.swift in Sources */,
 				8F424596291900DC00DDC3BE /* BaseView.swift in Sources */,
 				8F3380472925212D009AF898 /* InfoCustomCells.swift in Sources */,
+				8F5B7D2D29277DDA0022554B /* MyInfo.swift in Sources */,
 				8F33803D2924EF74009AF898 /* MyInfoView.swift in Sources */,
 				8F4245B129194EA700DDC3BE /* EnterPhoneNumberView.swift in Sources */,
 				8F3FA5D2291BDC8900379423 /* BirthdayView.swift in Sources */,

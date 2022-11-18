@@ -42,7 +42,7 @@ struct UserDefaultManager {
 //    }
     
     static func getUserDefault(key: userDefaultData) -> String {
-        UserDefaults.standard.string(forKey: "\(key)") ?? "값을 찾을수 없습니다."
+        UserDefaults.standard.string(forKey: "\(key)") ?? ""
     }
     
     static func setUserDefault<T>(key: userDefaultData, value: T) {
