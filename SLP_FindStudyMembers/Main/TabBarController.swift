@@ -23,6 +23,7 @@ final class TabBarController: UITabBarController {
               createNavController(for: ViewController(), title: NSLocalizedString("새싹샵", comment: ""), image: UIImage(systemName: "gift")!),
               createNavController(for: ViewController(), title: NSLocalizedString("새싹친구", comment: ""), image: UIImage(named: "sprout")!),
               createNavController(for: MyInfoViewController(), title: NSLocalizedString("내정보", comment: ""), image: UIImage(systemName: "person")!)
+              
           ]
       }
     
@@ -30,7 +31,7 @@ final class TabBarController: UITabBarController {
           let navController = UINavigationController(rootViewController: rootViewController)
           navController.tabBarItem.title = title
           navController.tabBarItem.image = image
-          navController.navigationBar.prefersLargeTitles = true
+//          navController.navigationBar.prefersLargeTitles = true
           rootViewController.navigationItem.title = title
           return navController
       }

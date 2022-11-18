@@ -19,9 +19,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
 //        let vc = PhoneAuthoViewController()
         let home = TabBarController()
-        self.window?.rootViewController = home
+        let navi = UINavigationController(rootViewController: home)
+        self.window?.rootViewController = navi
     
-        
+        //아래가 정상. 위는 테스트용
 //        if UserDefaultManager.getUserDefault(key: .idToken) != nil {
 //            let vc = NickNameViewController()
 ////            let vc = GenderViewController()

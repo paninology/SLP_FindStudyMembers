@@ -18,7 +18,7 @@ extension SeSACStudyAPI {
     var url: URL {
         switch self {
         case .signIn, .logIn:
-            return URL(string: "http://api.sesac.co.kr:1207/v1/user")!
+            return URL(string: "http://api.sesac.co.kr:1210/v1/user")!
         }
     }
     

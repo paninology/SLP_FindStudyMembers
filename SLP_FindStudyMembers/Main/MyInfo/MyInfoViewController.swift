@@ -22,6 +22,7 @@ class MyInfoViewController: BaseViewController {
         super.viewDidLoad()
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
+        navigationController?.title = "내정보"
     }
     
     
@@ -67,6 +68,7 @@ extension MyInfoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
             
+            transition(InfoManagementViewController(), transitionStyle: .push)
         }
     }
     

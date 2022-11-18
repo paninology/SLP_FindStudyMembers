@@ -15,6 +15,8 @@
 		8F33804229251F0D009AF898 /* InfoManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F33804129251F0D009AF898 /* InfoManagementView.swift */; };
 		8F33804429251F80009AF898 /* MyDetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F33804329251F80009AF898 /* MyDetailInfoView.swift */; };
 		8F3380472925212D009AF898 /* InfoCustomCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3380462925212D009AF898 /* InfoCustomCells.swift */; };
+		8F367FC12926286F006CEB55 /* ProfileCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F367FC02926286F006CEB55 /* ProfileCardView.swift */; };
+		8F367FC329263C0F006CEB55 /* InfoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F367FC229263C0F006CEB55 /* InfoTableView.swift */; };
 		8F3DE1E0292282550009D638 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3DE1DF292282550009D638 /* APIKeys.swift */; };
 		8F3DE1E2292282740009D638 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3DE1E1292282740009D638 /* APIManager.swift */; };
 		8F3DE1E62922855F0009D638 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8F3DE1E52922855F0009D638 /* Alamofire */; };
@@ -56,6 +58,8 @@
 		8F447E28292395B100E7D19D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8F447E27292395B100E7D19D /* GoogleService-Info.plist */; };
 		8F564CA129210FB40035329C /* GenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F564CA029210FB40035329C /* GenderView.swift */; };
 		8F564CA329210FBD0035329C /* GenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F564CA229210FBD0035329C /* GenderViewController.swift */; };
+		8F5B7D26292710A10022554B /* WithdrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5B7D25292710A10022554B /* WithdrawViewController.swift */; };
+		8F5B7D2A29274F560022554B /* MultiSlider in Frameworks */ = {isa = PBXBuildFile; productRef = 8F5B7D2929274F560022554B /* MultiSlider */; };
 		8F6082B2291F89D4008B6E58 /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6082B1291F89D4008B6E58 /* EmailView.swift */; };
 		8F6082B4291F8A98008B6E58 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6082B3291F8A98008B6E58 /* EmailViewController.swift */; };
 /* End PBXBuildFile section */
@@ -69,6 +73,8 @@
 		8F33804129251F0D009AF898 /* InfoManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoManagementView.swift; sourceTree = "<group>"; };
 		8F33804329251F80009AF898 /* MyDetailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDetailInfoView.swift; sourceTree = "<group>"; };
 		8F3380462925212D009AF898 /* InfoCustomCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCustomCells.swift; sourceTree = "<group>"; };
+		8F367FC02926286F006CEB55 /* ProfileCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCardView.swift; sourceTree = "<group>"; };
+		8F367FC229263C0F006CEB55 /* InfoTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableView.swift; sourceTree = "<group>"; };
 		8F3DE1DF292282550009D638 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		8F3DE1E1292282740009D638 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		8F3FA5B3291B2A3100379423 /* NickNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameView.swift; sourceTree = "<group>"; };
@@ -105,6 +111,7 @@
 		8F447E27292395B100E7D19D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8F564CA029210FB40035329C /* GenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderView.swift; sourceTree = "<group>"; };
 		8F564CA229210FBD0035329C /* GenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewController.swift; sourceTree = "<group>"; };
+		8F5B7D25292710A10022554B /* WithdrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawViewController.swift; sourceTree = "<group>"; };
 		8F6082B1291F89D4008B6E58 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 		8F6082B3291F8A98008B6E58 /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +130,7 @@
 				8F4245AF29194CAD00DDC3BE /* RxSwift in Frameworks */,
 				8F4245AD29194CAD00DDC3BE /* RxCocoa in Frameworks */,
 				8F4245942919007300DDC3BE /* SnapKit in Frameworks */,
+				8F5B7D2A29274F560022554B /* MultiSlider in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,8 +170,10 @@
 			children = (
 				8F3380452925210C009AF898 /* InfoCustomCells */,
 				8F33804329251F80009AF898 /* MyDetailInfoView.swift */,
-				8F33803F29251ED4009AF898 /* InfoManagementViewController.swift */,
 				8F33804129251F0D009AF898 /* InfoManagementView.swift */,
+				8F367FC229263C0F006CEB55 /* InfoTableView.swift */,
+				8F33803F29251ED4009AF898 /* InfoManagementViewController.swift */,
+				8F5B7D25292710A10022554B /* WithdrawViewController.swift */,
 			);
 			path = InfoManagement;
 			sourceTree = "<group>";
@@ -283,6 +293,7 @@
 				8F42459A2919031D00DDC3BE /* Customs */,
 				8F424595291900DC00DDC3BE /* BaseView.swift */,
 				8F4003F2291A22220040D91B /* BaseViewController.swift */,
+				8F367FC02926286F006CEB55 /* ProfileCardView.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -359,6 +370,7 @@
 				8F3FA5CC291BA55400379423 /* FirebaseCrashlytics */,
 				8F3FA5CE291BA55400379423 /* FirebaseMessaging */,
 				8F3DE1E52922855F0009D638 /* Alamofire */,
+				8F5B7D2929274F560022554B /* MultiSlider */,
 			);
 			productName = SLP_FindStudyMembers;
 			productReference = 8F42456C2918D45200DDC3BE /* SLP_FindStudyMembers.app */;
@@ -394,6 +406,7 @@
 				8F4003FD291A9EE20040D91B /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				8F3FA5C7291BA55400379423 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				8F3DE1E42922855F0009D638 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				8F5B7D2829274F560022554B /* XCRemoteSwiftPackageReference "MultiSlider" */,
 			);
 			productRefGroup = 8F42456D2918D45200DDC3BE /* Products */;
 			projectDirPath = "";
@@ -438,6 +451,7 @@
 				8F4245742918D45200DDC3BE /* ViewController.swift in Sources */,
 				8F4003F9291A29DD0040D91B /* Transition+Extensions.swift in Sources */,
 				8F4245A2291905FC00DDC3BE /* Constants.swift in Sources */,
+				8F367FC329263C0F006CEB55 /* InfoTableView.swift in Sources */,
 				8F33804429251F80009AF898 /* MyDetailInfoView.swift in Sources */,
 				8F4245702918D45200DDC3BE /* AppDelegate.swift in Sources */,
 				8F4245A929194C1E00DDC3BE /* LogInViewModel.swift in Sources */,
@@ -455,11 +469,13 @@
 				8F33803D2924EF74009AF898 /* MyInfoView.swift in Sources */,
 				8F4245B129194EA700DDC3BE /* EnterPhoneNumberView.swift in Sources */,
 				8F3FA5D2291BDC8900379423 /* BirthdayView.swift in Sources */,
+				8F5B7D26292710A10022554B /* WithdrawViewController.swift in Sources */,
 				8F4245722918D45200DDC3BE /* SceneDelegate.swift in Sources */,
 				8F4245A529190CD400DDC3BE /* PhoneAuthView.swift in Sources */,
 				8F33804029251ED4009AF898 /* InfoManagementViewController.swift in Sources */,
 				8F4245B3291951FB00DDC3BE /* EnterPhoneNumberViewController.swift in Sources */,
 				8F447E232923173300E7D19D /* EndPoint.swift in Sources */,
+				8F367FC12926286F006CEB55 /* ProfileCardView.swift in Sources */,
 				8F3FA5D4291BE76100379423 /* BirthdayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -728,6 +744,14 @@
 				minimumVersion = 6.0.0;
 			};
 		};
+		8F5B7D2829274F560022554B /* XCRemoteSwiftPackageReference "MultiSlider" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yonat/MultiSlider.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -775,6 +799,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8F4245AB29194CAD00DDC3BE /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		8F5B7D2929274F560022554B /* MultiSlider */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F5B7D2829274F560022554B /* XCRemoteSwiftPackageReference "MultiSlider" */;
+			productName = MultiSlider;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

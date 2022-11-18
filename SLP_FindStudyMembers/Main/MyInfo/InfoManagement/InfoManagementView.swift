@@ -5,17 +5,45 @@
 //  Created by yongseok lee on 2022/11/16.
 //
 
-import Foundation
+import UIKit
 
 
 class InfoManagementView: BaseView {
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+
+    
+    
+    let profileCardView: ProfileCardView = {
+        let view = ProfileCardView()
+        return view
+    }()
+    
+    let myDetailInfoView: MyDetailInfoView = {
+        let view = MyDetailInfoView()
+        return view
+    }()
+    
+    
+    override func configure() {
+
+        addSubview(myDetailInfoView)
+        addSubview(profileCardView)
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    override func setConstraints() {
+        
+    
+        profileCardView.snp.makeConstraints { make in
+            make.horizontalEdges.equalToSuperview()
+            make.top.equalTo(safeAreaLayoutGuide)
+//            make.height.eq
+        }
+        
+        myDetailInfoView.snp.makeConstraints { make in
+            make.horizontalEdges.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.top.equalTo(profileCardView.snp.bottom).offset(16)
+        }
     }
     
 }
