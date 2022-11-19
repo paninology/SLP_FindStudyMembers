@@ -29,6 +29,7 @@ final class PhoneAuthoViewController: BaseViewController {
         super.viewDidLoad()
         UIBind()
         viewModel.convertPhoneNum()
+    
        
         
     }

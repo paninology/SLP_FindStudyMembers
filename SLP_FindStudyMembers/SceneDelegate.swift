@@ -29,14 +29,33 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // 2. 타기기 사용자 >> 아이디토큰 없음/ 서버 기가입 >> 번호인증 후 홈탭으로
         // 3. 기존(같은기기) 사용자 >>아이디토큰 있음/ 겟서버통신200>> 서버 회원가입 유무 네트워크 판단 >> 신델리게이트에서 바로 홈탭
         // 아이디토큰 유무검사 >>토큰 없으면 일단 번호인증>>토큰받고 겟 서버통신으로 가입유무 판단
-        UserDefaults.standard.removeObject(forKey: "\(userDefaultData.idToken)")
-        print("dddddd",UserDefaultManager.getUserDefault(key: .idToken))
+//        UserDefaults.standard.removeObject(forKey: "\(userDefaultData.idToken)")
+        print("dddddd idtoken",UserDefaultManager.getUserDefault(key: .idToken))
+        APIManager.share.refreshIDToken() //클로져로 아래 통신 넣기
         
-        if UserDefaultManager.getUserDefault(key: .idToken) != "" {
-            let vc = NickNameViewController()
-            let navi = UINavigationController(rootViewController: vc)
-            window?.rootViewController = navi
-        } else {
+        if UserDefaultManager.getUserDefault(key: .idToken) != "" { //번호인증 된경우(기존사용자+가입 중도실패자)
+            APIManager.share.getUserInfo { [weak self] code, userInfo in
+                if code == 406 { //서버 미가입자 >>테스트완료
+                    print("406 미가입자입니다")
+                    let vc = NickNameViewController()
+                    let navi = UINavigationController(rootViewController: vc)
+                    self?.window?.rootViewController = navi
+                }else if code == 200 { //서버 기가입자 >>테스트 완료. but 토큰 다시받는 스레드 이슈 있음
+                    let vc = TabBarController()
+                    self?.window?.rootViewController = vc
+                    
+                } else if code == 401 { //토큰오류
+                    print("토큰오류")
+                    
+                } else {
+                    print("통신오류. 회원가입절차 실행")
+                    let vc = NickNameViewController()
+                    let navi = UINavigationController(rootViewController: vc)
+                    self?.window?.rootViewController = navi
+                }
+            }
+          
+        } else { //번호인증 안된경우(서버만 된경우+아예처음)
             let vc = PhoneAuthoViewController()
             let navi = UINavigationController(rootViewController: vc)
             window?.rootViewController = navi

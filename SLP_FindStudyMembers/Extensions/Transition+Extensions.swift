@@ -16,6 +16,7 @@ extension UIViewController {
         case presentFull//네ㅇ비게이션 풀스크린
         case push
         case presentOverFull
+        case toHomeTab
 //        case popUpToPreView
     }
     
@@ -35,10 +36,19 @@ extension UIViewController {
         case.presentOverFull:
             self.modalPresentationStyle = .overFullScreen
             self.present(viewController, animated: true)
+        case .toHomeTab:
+            let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+            let sceneDelegate = windowScene?.delegate as? SceneDelegate
+            let vc = TabBarController()
+            sceneDelegate?.window?.rootViewController = vc
+            sceneDelegate?.window?.makeKeyAndVisible()
+            
 //        case.popUpToPreView:
 //            self.navigationController?.popViewController(animated: true)
+        
         }
     }
+  
   
     
 }

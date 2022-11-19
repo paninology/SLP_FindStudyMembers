@@ -64,24 +64,25 @@ class APIManager {
         }
     }
     
-    func getUserInfo( completion: @escaping ((Int?)->Void)) {
+    func getUserInfo( completion: @escaping ((Int?, MyInfo?)->Void)) {
       
     
         let api = SeSACStudyAPI.logIn
       
-        AF.request(api.url, method: .get, headers: api.headers).responseDecodable(of: MyInfo.self) { response in
+        AF.request(api.url, method: .get, parameters: api.parameters, headers: api.headers).responseDecodable(of: MyInfo.self) { response in
 
+            print("api info",api.headers, api.parameters, api.url)
             switch response.result {
             case.success(let data):
                 print("Loginsuccess", data)
                 print("login status", response.response?.statusCode)
                 print(api.headers, api.parameters)
-                completion(response.response?.statusCode)
+                completion(response.response?.statusCode, data)
                
             case.failure(let error):
                 print("error",error)
                 print("err status",response.response?.statusCode)
-                if response.response?.statusCode == 406 {  }
+                completion(response.response?.statusCode, nil)
                 if response.response?.statusCode == 202 { print("부적절한 아이디.") } //화면전환 필요
             }
         }

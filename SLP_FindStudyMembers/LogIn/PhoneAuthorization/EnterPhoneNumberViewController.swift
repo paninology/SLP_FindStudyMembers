@@ -47,6 +47,14 @@ final class EnterPhoneNumberViewController: BaseViewController {
             .bind(to: viewModel.authNumber)
             .disposed(by: disposeBag)
         
+        mainView.userTextField.rx
+            .controlEvent([.editingDidEndOnExit])
+            .subscribe { _ in
+            print("editingDidEndOnExit")
+                self.mainView.endEditing(true)
+            }
+            .disposed(by: disposeBag)
+        
         viewModel.checkAuthNumValidation()
         
         viewModel.authNumber
@@ -108,7 +116,7 @@ final class EnterPhoneNumberViewController: BaseViewController {
             }
             print("signed in")
             
-            APIManager.share.getUserInfo { code in
+            APIManager.share.getUserInfo { code, userInfo in
                 
                 if code == 406 { //서버 미가입자
                     self?.mainView.makeToast("인증성공. 회원가입 절차를 시작합니다.", position: .top)

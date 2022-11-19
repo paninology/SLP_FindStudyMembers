@@ -15,6 +15,7 @@ final class InfoManagementViewController: BaseViewController {
 //    let mainView = InfoManagementView()
     let mainView = InfoTableView()
     
+    var userName = "내이름"
     
     override func loadView() {
         super.loadView()
@@ -46,6 +47,10 @@ final class InfoManagementViewController: BaseViewController {
         print(" moved")
             print("nodf")
     }
+    @objc func textFieldEnd(sender: UITextField) {
+        mainView.endEditing(true)
+        print("edit end")
+    }
 
     
 }
@@ -62,7 +67,7 @@ extension InfoManagementViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = InfoCardTableViewCell()
-            cell.cardView.nameLabel.text = "test"
+            cell.cardView.nameLabel.text = userName
             cell.cardView.sproutImageView.image = UIImage(named: "sesac_face_2")
             cell.selectionStyle = .none
             return cell
@@ -71,7 +76,7 @@ extension InfoManagementViewController: UITableViewDelegate, UITableViewDataSour
             cell.selectionStyle = .none
 //            cell.detailView.ageSlider.rx.maximumValue
             cell.detailView.maleButton.addTarget(self, action: #selector(maleButtonClicked), for: .touchUpInside)
-                
+            cell.detailView.studyTextField.addTarget(self, action: #selector(textFieldEnd), for: .editingDidEndOnExit)
             cell.detailView.ageSlider.addTarget(self, action: #selector(sliderValueChanged), for: .valueChanged)
            
             return cell

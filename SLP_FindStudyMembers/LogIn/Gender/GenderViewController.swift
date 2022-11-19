@@ -27,9 +27,12 @@ class GenderViewController: BaseViewController {
     
     func UIBind() {
         mainView.confirmButton.rx.tap
-            .bind { _ in
+            .withUnretained(self)
+            .bind { (vc,_) in
                 APIManager.share.requestSignIn {
                     print("메인으로 고고씽")
+                    vc.transition(TabBarController(), transitionStyle: .toHomeTab)
+                    
                 }
             }
             .disposed(by: disposeBag)
