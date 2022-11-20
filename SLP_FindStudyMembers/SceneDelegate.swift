@@ -19,9 +19,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
 //        let vc = PhoneAuthoViewController()
         
-//        let home = TabBarController()
-//        let navi = UINavigationController(rootViewController: home)
-//        self.window?.rootViewController = navi
+        let home = TabBarController()
+        let navi = UINavigationController(rootViewController: home)
+        self.window?.rootViewController = navi
     
         //아래가 정상. 위는 테스트용
         // 1. 첫 사용자 >> 아이디토큰 없음/ 서버 미가입 >> 번호인증 후 회원가입절차
@@ -30,6 +30,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // 3. 기존(같은기기) 사용자 >>아이디토큰 있음/ 겟서버통신200>> 서버 회원가입 유무 네트워크 판단 >> 신델리게이트에서 바로 홈탭
         // 아이디토큰 유무검사 >>토큰 없으면 일단 번호인증>>토큰받고 겟 서버통신으로 가입유무 판단
 //        UserDefaults.standard.removeObject(forKey: "\(userDefaultData.idToken)")
+       /*
         print("dddddd idtoken",UserDefaultManager.getUserDefault(key: .idToken))
         APIManager.share.refreshIDToken() //클로져로 아래 통신 넣기
         
@@ -61,7 +62,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window?.rootViewController = navi
         }
         
-       
+       */
         
       
     }
