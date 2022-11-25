@@ -12,19 +12,22 @@ import Alamofire
 enum SeSACStudyAPI {
     case signIn(phoneNumber: String, FCMtoken: String, nick: String, birth: String, email: String, gender: Int)
     case logIn
+    case search(lat: Double, long: Double)
 }
 
 extension SeSACStudyAPI {
     var url: URL {
         switch self {
         case .signIn, .logIn:
-            return URL(string: "http://api.sesac.co.kr:1210/v1/user")!
+            return URL(string: "\(EndPoint.SeSACBaseURL)/v1/user")!
+        case .search:
+            return URL(string: "\(EndPoint.SeSACBaseURL)/queue/search")!
         }
     }
     
     var headers: HTTPHeaders {
         switch self {
-        case .signIn, .logIn:
+        case .signIn, .logIn, .search :
             return [
                 "idtoken": UserDefaultManager.getUserDefault(key: .idToken),
                 "Content-Type": "application/x-www-form-urlencoded"
@@ -42,6 +45,11 @@ extension SeSACStudyAPI {
                 "birth": birth,
                 "email": email,
                 "gender" : gender
+            ]
+        case .search(let lat, let long):
+            return [
+                "lat": lat,
+                "long": long
             ]
         default:
             return ["":""]

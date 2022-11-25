@@ -87,4 +87,8 @@ class APIManager {
             }
         }
     }
+    
+    func getNearStudy() {
+//        let api = SeSACStudyAPI.search(lat: <#T##Double#>, long: <#T##Double#>)
+    }
 }

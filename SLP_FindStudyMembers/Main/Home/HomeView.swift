@@ -105,7 +105,7 @@ class HomeView: BaseView {
         }
         
         centerPin.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+            make.center.equalTo(mapView.snp.center)
         }
         
         genderPickStackView.snp.makeConstraints { make in
