@@ -22,3 +22,5 @@ struct FromQueueDB: Codable {
     let studylist, reviews: [String]
     let gender, type, sesac, background: Int
 }
+
+

@@ -15,14 +15,30 @@ final class HomeViewModel {
     
     let suggestStudyKeword = PublishSubject<[String]>()
     
-    let enteredKeyword = PublishSubject<String>()
+//    let enteredKeyword = PublishSubject<String>()
+    
+    var keywords:[String] = []
+    
+    var keyword = ""
+    
+    let disposebag = DisposeBag()
     
     func enterKeyword() {
-        suggestStudyKeword.bind { <#[String]#> in
-            <#code#>
-        }
-        print("11111", enteredKeyword, suggestStudyKeword)
+        guard !keywords.contains(keyword) else { return }
         
+        keywords.append(keyword )
+        print(keyword, keywords)
+        suggestStudyKeword.onNext(keywords)
+//        enteredKeyword.bind { value in
+//            self.keywords.append(value)
+//            self.suggestStudyKeword.onNext(self.keywords)
+//            print("vv",value)
+//        }
+//        .disposed(by: disposebag)
+        
+//        suggestStudyKeword.onNext( ["test"])
+
+       
     }
     
     func requestNearbyUsers() {

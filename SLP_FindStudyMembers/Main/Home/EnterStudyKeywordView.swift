@@ -23,7 +23,7 @@ final class EnterStudyKeywordView: BaseView {
     
     let collectionView: UICollectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
-        
+        view.translatesAutoresizingMaskIntoConstraints = false
          func createLayout() -> UICollectionViewLayout {
             let config = UICollectionViewCompositionalLayoutConfiguration()
             let layout = createCompositionalLayout()
@@ -32,11 +32,31 @@ final class EnterStudyKeywordView: BaseView {
         }
         
         func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
-            return UICollectionViewCompositionalLayout { (sectionIndex, NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in                       let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),heightDimension: .fractionalHeight(1))
+            return UICollectionViewCompositionalLayout { (sectionIndex, NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
+//                let heightDimension = NSCollectionLayoutDimension.estimated(200)
+                
+                let itemSize = NSCollectionLayoutSize(widthDimension: .estimated(44),heightDimension: .fractionalHeight(1))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),heightDimension: .absolute(140))
-                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+//                item.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8)
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(50))
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item] )
+                group.interItemSpacing = .fixed(8)
+                
                 let section = NSCollectionLayoutSection(group: group)
+                section.interGroupSpacing = 8
+                section.contentInsets = NSDirectionalEdgeInsets(top: 4, leading: 4, bottom: 4, trailing: 4)
+//                let headerFooterSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(50.0))
+//                let header = NSCollectionLayoutBoundarySupplementaryItem(
+//                    layoutSize: headerFooterSize,
+//                    elementKind: UICollectionView.elementKindSectionHeader,
+//                    alignment: .top
+//                    )
+//                let footer = NSCollectionLayoutBoundarySupplementaryItem(
+//                    layoutSize: headerFooterSize,
+//                    elementKind: UICollectionView.elementKindSectionFooter,
+//                    alignment: .bottom
+//                    )
+//                    section.boundarySupplementaryItems = [header, footer]
                 return section
             }
         }

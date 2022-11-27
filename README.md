@@ -56,3 +56,7 @@
     
     11.20
     홈탭에서 성별선택. 스택뷰? 세그먼트 커스텀?
+
+
+
+'Fatal: supplied item identifiers are not unique.'

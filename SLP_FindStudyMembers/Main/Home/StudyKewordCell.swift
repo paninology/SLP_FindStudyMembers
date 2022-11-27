@@ -16,7 +16,7 @@ class StudyKeywordCell: UICollectionViewCell {
         view.layer.borderWidth = 0.5
         view.layer.cornerRadius = 8
         view.clipsToBounds = true
-        view.text = "test"
+        view.font = .systemFont(ofSize: 14)
         return view
     }()
     
@@ -24,7 +24,8 @@ class StudyKeywordCell: UICollectionViewCell {
         super.init(frame: frame)
         addSubview(KeywordLabel)
         KeywordLabel.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.edges.equalToSuperview().inset(4)
+
         }
     }
     

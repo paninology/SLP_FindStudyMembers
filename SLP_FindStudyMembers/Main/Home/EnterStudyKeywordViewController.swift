@@ -36,7 +36,6 @@ final class EnterStudyKeywordViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        mainView.collectionView.delegate = self
         configureDataSource()
         UIBind()
         navigationController?.isNavigationBarHidden = false
@@ -45,54 +44,47 @@ final class EnterStudyKeywordViewController: BaseViewController {
     
     private func UIBind() {
         
-        searchBar.rx.textDidEndEditing
-            .withUnretained(self)
-            .bind { (vc, _) in
-                vc.viewModel.enterKeyword()
-                print("end")
-            }
+
         searchBar.rx.searchButtonClicked
-            .bind { _ in
+            .withUnretained(self)
+            .bind { (vc,_) in
                 print("tttpppp")
-                self.viewModel.enterKeyword()
+                vc.viewModel.enterKeyword()
+                vc.searchBar.text = ""
             }
             .disposed(by: disposeBag)
         
         searchBar.rx.text.orEmpty
-            .bind(to: viewModel.enteredKeyword)
+            .withUnretained(self)
+            .bind { (vc,value) in
+                vc.viewModel.keyword =  value
+            }
             .disposed(by: disposeBag)
         
         viewModel.suggestStudyKeword
             .withUnretained(self)
             .bind { (vc,value) in
+                print("suggested", value)
                 var snapshot = NSDiffableDataSourceSnapshot<Int, String>()
                 snapshot.appendSections([0])
                 snapshot.appendItems(value)
                 vc.dataSource.apply(snapshot)
             }
             .disposed(by: disposeBag)
-        
-        viewModel.enteredKeyword
-            .withUnretained(self)
-            .bind { (vc,value) in
-                print(value)
-            }
-            .disposed(by: disposeBag)
+
     }
     
 }
 
-//extension EnterStudyKeywordViewController: UICollectionViewDelegate {
-//
-//}
 
 extension EnterStudyKeywordViewController {
 
     
     private func configureDataSource() {
         let cellRegistration = UICollectionView.CellRegistration<StudyKeywordCell, String>.init { cell, indexPath, itemIdentifier in
-            cell.KeywordLabel.text = "test11"
-            print(itemIdentifier)
+            cell.KeywordLabel.text = "  \(itemIdentifier)  "
+            
+            print("item",itemIdentifier)
         }
    
         
@@ -100,6 +92,7 @@ extension EnterStudyKeywordViewController {
         //numberOfItemsInSection, cellForItemAt
         dataSource = UICollectionViewDiffableDataSource(collectionView: mainView.collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
             let cell = collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
+           
             return cell
             
         })
