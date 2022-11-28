@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
         
 //        let vc = PhoneAuthoViewController()
-        
+        LoginAPIManager.share.refreshIDToken()
         let home = TabBarController()
         let navi = UINavigationController(rootViewController: home)
         self.window?.rootViewController = navi

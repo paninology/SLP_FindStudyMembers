@@ -55,7 +55,10 @@ final class HomeViewContoller: BaseViewController {
         mainView.findButton.rx.tap
             .withUnretained(self)
             .bind { (vc,_) in
-                vc.transition(EnterStudyKeywordViewController(), transitionStyle: .push)
+                let view = EnterStudyKeywordViewController()
+                view.currentCoordinator = (37.517819364682694,126.88647317074734)
+                vc.transition(view, transitionStyle: .push)
+                
             }
             .disposed(by: disposeBag)
             
@@ -81,10 +84,12 @@ extension HomeViewContoller: CLLocationManagerDelegate {
     //Location6. 사용자의 위치를 못 가지고 온경우
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(#function)
+        print("location Farilded")
     }
    
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) { //초기화 될 때 한번 실행된다. 즉 앱 실행할때 호출됨. 그래서 뷰디드로드에 말고 그냥 여기서 호출해도됨
         print(#function)
+        print("locationDiddddddddchanged")
         checkUserDeviceLocationServiceAuthorization() //아예 첨부터 시작. 위치서비스를 끌 수도 있어서
     }
     
@@ -158,6 +163,7 @@ extension HomeViewContoller: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) { //지도 움직일때
         locationManager.startUpdatingLocation()
+        print("현위치", locationManager.location)
     }
     
     //지도에 커스텀 핀 추가

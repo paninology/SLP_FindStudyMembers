@@ -20,9 +20,10 @@
 		8F3719E1292DE5A8006A8AC8 /* StudyKewordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3719E0292DE5A8006A8AC8 /* StudyKewordCell.swift */; };
 		8F3719E3292DF71B006A8AC8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3719E2292DF71B006A8AC8 /* HomeViewModel.swift */; };
 		8F3719E5292E2B11006A8AC8 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3719E4292E2B11006A8AC8 /* HomeModel.swift */; };
+		8F3769E8293478DC00EAE0A3 /* QueueAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3769E7293478DC00EAE0A3 /* QueueAPIManager.swift */; };
 		8F3A1A0D29290FA700BCF0E8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3A1A0C29290FA700BCF0E8 /* HomeView.swift */; };
 		8F3DE1E0292282550009D638 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3DE1DF292282550009D638 /* APIKeys.swift */; };
-		8F3DE1E2292282740009D638 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3DE1E1292282740009D638 /* APIManager.swift */; };
+		8F3DE1E2292282740009D638 /* LoginAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3DE1E1292282740009D638 /* LoginAPIManager.swift */; };
 		8F3DE1E62922855F0009D638 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8F3DE1E52922855F0009D638 /* Alamofire */; };
 		8F3FA5B4291B2A3100379423 /* NickNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3FA5B3291B2A3100379423 /* NickNameView.swift */; };
 		8F3FA5B6291B2F5D00379423 /* NickNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3FA5B5291B2F5D00379423 /* NickNameViewController.swift */; };
@@ -85,9 +86,10 @@
 		8F3719E0292DE5A8006A8AC8 /* StudyKewordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyKewordCell.swift; sourceTree = "<group>"; };
 		8F3719E2292DF71B006A8AC8 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		8F3719E4292E2B11006A8AC8 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		8F3769E7293478DC00EAE0A3 /* QueueAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueAPIManager.swift; sourceTree = "<group>"; };
 		8F3A1A0C29290FA700BCF0E8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8F3DE1DF292282550009D638 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
-		8F3DE1E1292282740009D638 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		8F3DE1E1292282740009D638 /* LoginAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAPIManager.swift; sourceTree = "<group>"; };
 		8F3FA5B3291B2A3100379423 /* NickNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameView.swift; sourceTree = "<group>"; };
 		8F3FA5B5291B2F5D00379423 /* NickNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameViewController.swift; sourceTree = "<group>"; };
 		8F3FA5C3291B850000379423 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -175,7 +177,6 @@
 			isa = PBXGroup;
 			children = (
 				8F3719E2292DF71B006A8AC8 /* HomeViewModel.swift */,
-				8F3719E4292E2B11006A8AC8 /* HomeModel.swift */,
 				8F3A1A0C29290FA700BCF0E8 /* HomeView.swift */,
 				8F3380362924BB87009AF898 /* HomeViewController.swift */,
 				8F4F2B15292C4F260067B32B /* EnterStudyKeywordView.swift */,
@@ -210,7 +211,8 @@
 			isa = PBXGroup;
 			children = (
 				8F3DE1DF292282550009D638 /* APIKeys.swift */,
-				8F3DE1E1292282740009D638 /* APIManager.swift */,
+				8F3DE1E1292282740009D638 /* LoginAPIManager.swift */,
+				8F3769E7293478DC00EAE0A3 /* QueueAPIManager.swift */,
 				8F447E222923173300E7D19D /* EndPoint.swift */,
 			);
 			path = Network;
@@ -360,6 +362,7 @@
 			isa = PBXGroup;
 			children = (
 				8F5B7D2C29277DDA0022554B /* MyInfo.swift */,
+				8F3719E4292E2B11006A8AC8 /* HomeModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -473,7 +476,7 @@
 				8F33804229251F0D009AF898 /* InfoManagementView.swift in Sources */,
 				8F3380392924BBCA009AF898 /* TabBarController.swift in Sources */,
 				8F3DE1E0292282550009D638 /* APIKeys.swift in Sources */,
-				8F3DE1E2292282740009D638 /* APIManager.swift in Sources */,
+				8F3DE1E2292282740009D638 /* LoginAPIManager.swift in Sources */,
 				8F3FA5B6291B2F5D00379423 /* NickNameViewController.swift in Sources */,
 				8F564CA129210FB40035329C /* GenderView.swift in Sources */,
 				8F6082B2291F89D4008B6E58 /* EmailView.swift in Sources */,
@@ -502,6 +505,7 @@
 				8F3380472925212D009AF898 /* InfoCustomCells.swift in Sources */,
 				8F5B7D2D29277DDA0022554B /* MyInfo.swift in Sources */,
 				8F33803D2924EF74009AF898 /* MyInfoView.swift in Sources */,
+				8F3769E8293478DC00EAE0A3 /* QueueAPIManager.swift in Sources */,
 				8F4245B129194EA700DDC3BE /* EnterPhoneNumberView.swift in Sources */,
 				8F3FA5D2291BDC8900379423 /* BirthdayView.swift in Sources */,
 				8F5B7D26292710A10022554B /* WithdrawViewController.swift in Sources */,

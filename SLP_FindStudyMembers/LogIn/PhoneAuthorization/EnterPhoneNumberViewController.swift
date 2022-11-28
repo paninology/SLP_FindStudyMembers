@@ -116,7 +116,7 @@ final class EnterPhoneNumberViewController: BaseViewController {
             }
             print("signed in")
             
-            APIManager.share.getUserInfo { code, userInfo in
+            LoginAPIManager.share.getUserInfo { code, userInfo in
                 
                 if code == 406 { //서버 미가입자
                     self?.mainView.makeToast("인증성공. 회원가입 절차를 시작합니다.", position: .top)

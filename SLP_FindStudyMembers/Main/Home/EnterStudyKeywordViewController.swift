@@ -22,12 +22,16 @@ final class EnterStudyKeywordViewController: BaseViewController {
         return view
     }()
     
+    var currentCoordinator: (Double,Double)?
+    
+    var searchInfo: SearchSeSAC?
+    
     private var dataSource: UICollectionViewDiffableDataSource<Int, String>!
     
     let cellRegistration = UICollectionView.CellRegistration<StudyKeywordCell, String>.init { cell, indexPath, itemIdentifier in
         cell.KeywordLabel.text = itemIdentifier
      }
-    
+
     override func loadView() {
         super.loadView()
         view = mainView
@@ -40,6 +44,7 @@ final class EnterStudyKeywordViewController: BaseViewController {
         UIBind()
         navigationController?.isNavigationBarHidden = false
         self.navigationItem.titleView = searchBar
+        requestSearchInfo()
     }
     
     private func UIBind() {
@@ -72,6 +77,14 @@ final class EnterStudyKeywordViewController: BaseViewController {
             }
             .disposed(by: disposeBag)
 
+    }
+    func requestSearchInfo() {
+        guard let currentCoordinator = currentCoordinator else {
+            mainView.makeToast("현재 위치설정이 잘못 되었습니다.")
+            return }
+        QueueAPIManager.share.requestSearch(lat: currentCoordinator.0, long: currentCoordinator.1) {
+            print("sucesslllll")
+        }
     }
     
 }

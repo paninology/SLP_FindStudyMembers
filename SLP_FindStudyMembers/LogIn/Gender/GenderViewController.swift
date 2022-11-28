@@ -29,7 +29,7 @@ class GenderViewController: BaseViewController {
         mainView.confirmButton.rx.tap
             .withUnretained(self)
             .bind { (vc,_) in
-                APIManager.share.requestSignIn {
+                LoginAPIManager.share.requestSignIn {
                     print("메인으로 고고씽")
                     vc.transition(TabBarController(), transitionStyle: .toHomeTab)
                     

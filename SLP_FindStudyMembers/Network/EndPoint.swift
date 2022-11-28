@@ -21,7 +21,7 @@ extension SeSACStudyAPI {
         case .signIn, .logIn:
             return URL(string: "\(EndPoint.SeSACBaseURL)/v1/user")!
         case .search:
-            return URL(string: "\(EndPoint.SeSACBaseURL)/queue/search")!
+            return URL(string: "\(EndPoint.SeSACBaseURL)/v1/queue/search")!
         }
     }
     

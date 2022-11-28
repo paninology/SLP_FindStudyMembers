@@ -12,9 +12,9 @@ import FirebaseAuth
 import Firebase
 
 
-class APIManager {
+class LoginAPIManager {
     
-    static let share = APIManager()
+    static let share = LoginAPIManager()
     
     private init() {}
     

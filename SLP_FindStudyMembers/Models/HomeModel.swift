@@ -9,7 +9,7 @@ import Foundation
 
 
 // MARK: - NearbySeSAC
-struct NearbySeSAC: Codable {
+struct SearchSeSAC: Codable {
     let fromQueueDB, fromQueueDBRequested: [FromQueueDB]
     let fromRecommend: [String]
 }
