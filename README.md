@@ -60,3 +60,6 @@
 
 
 'Fatal: supplied item identifiers are not unique.'
+
+12.1
+    테이블뷰 오토디멘션 안먹음. 아마 내부 뷰의 크기가 확정이 안되는듯

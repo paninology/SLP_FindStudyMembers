@@ -13,6 +13,11 @@ final class EnterStudyKeywordView: BaseView {
 //        let view = UISearchBar()
 //        return view
 //    }()
+    let searchBar: UISearchBar = {
+       let view = UISearchBar()
+        view.placeholder = "띄어쓰기로 복수 입력이 가능해요."
+        return view
+    }()
     
     let findButton: GreenCurvedButton = {
         let view = GreenCurvedButton()
@@ -33,31 +38,29 @@ final class EnterStudyKeywordView: BaseView {
         
         func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
             return UICollectionViewCompositionalLayout { (sectionIndex, NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
-//                let heightDimension = NSCollectionLayoutDimension.estimated(200)
+
+                if sectionIndex == 1 {
+                    
+                }
                 
-                let itemSize = NSCollectionLayoutSize(widthDimension: .estimated(44),heightDimension: .fractionalHeight(1))
+                let itemSize = NSCollectionLayoutSize(widthDimension: .estimated(44), heightDimension: .estimated(50))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
-//                item.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8)
-                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(50))
+                item.contentInsets = NSDirectionalEdgeInsets(top: 4, leading: 4, bottom: 4, trailing: 4)
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(60))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item] )
-                group.interItemSpacing = .fixed(8)
+//                group.interItemSpacing = .fixed(8)
                 
+                let headerFooterSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                              heightDimension: .estimated(44))
+                let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerFooterSize, elementKind:"section-header-element-kind", alignment: .top)
+
                 let section = NSCollectionLayoutSection(group: group)
+                section.boundarySupplementaryItems = [sectionHeader]
                 section.interGroupSpacing = 8
                 section.contentInsets = NSDirectionalEdgeInsets(top: 4, leading: 4, bottom: 4, trailing: 4)
-//                let headerFooterSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(50.0))
-//                let header = NSCollectionLayoutBoundarySupplementaryItem(
-//                    layoutSize: headerFooterSize,
-//                    elementKind: UICollectionView.elementKindSectionHeader,
-//                    alignment: .top
-//                    )
-//                let footer = NSCollectionLayoutBoundarySupplementaryItem(
-//                    layoutSize: headerFooterSize,
-//                    elementKind: UICollectionView.elementKindSectionFooter,
-//                    alignment: .bottom
-//                    )
-//                    section.boundarySupplementaryItems = [header, footer]
+                print("index",sectionIndex)
                 return section
+                
             }
         }
         

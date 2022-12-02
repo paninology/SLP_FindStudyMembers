@@ -20,7 +20,6 @@ class ProfileCardView: BaseView {
     
     let sproutImageView: UIImageView = {
         let view = UIImageView()
-        
         return view
     }()
     
@@ -47,27 +46,28 @@ class ProfileCardView: BaseView {
     }()
     
     override func configure() {
-        [backgroundImageView, sproutImageView,  indicator, profileView, nameLabel].forEach { addSubview($0) }
+        [backgroundImageView, sproutImageView, indicator, profileView, nameLabel].forEach { addSubview($0) }
+        print("cardView============")
     }
     
     override func setConstraints() {
         backgroundImageView.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(16)
             make.top.equalToSuperview()
-//            make.height.equalTo(200)
+            make.height.equalTo(200)
         }
         
         sproutImageView.snp.makeConstraints { make in
             make.bottom.equalTo(backgroundImageView.snp.bottom).inset(9)
             make.top.equalTo(backgroundImageView.snp.top).offset(19)
-//            make.width.equalTo(sproutImageView.snp.height)
-//            make.width.equalTo(70)
+//          make.width.equalTo(sproutImageView.snp.height)
+//          make.width.equalTo(70)
             make.centerX.equalToSuperview()
         }
         
         profileView.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(16)
-//            make.bottom.equalToSuperview()
+//          make.bottom.equalToSuperview()
             make.top.equalTo(backgroundImageView.snp.bottom)
             make.height.equalTo(58)
         }
@@ -79,10 +79,9 @@ class ProfileCardView: BaseView {
         
         indicator.snp.makeConstraints { make in
             make.top.equalTo(profileView.snp.top).inset(20)
-//            make.bottom.equalTo(profileView.snp.bottom).inset(26)
+//          make.bottom.equalTo(profileView.snp.bottom).inset(26)
             make.trailing.equalTo(profileView.snp.trailing).inset(18)
-            
-            
+   
         }
     }
 }

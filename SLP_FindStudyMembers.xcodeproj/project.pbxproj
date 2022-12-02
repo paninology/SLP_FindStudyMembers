@@ -61,8 +61,11 @@
 		8F447E232923173300E7D19D /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F447E222923173300E7D19D /* EndPoint.swift */; };
 		8F447E26292357F700E7D19D /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F447E25292357F700E7D19D /* UserDefaultManager.swift */; };
 		8F447E28292395B100E7D19D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8F447E27292395B100E7D19D /* GoogleService-Info.plist */; };
+		8F4DF528293797A900993B38 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = 8F4DF527293797A900993B38 /* Tabman */; };
+		8F4DF52C29379A7B00993B38 /* FindSeSACViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4DF52B29379A7B00993B38 /* FindSeSACViewController.swift */; };
 		8F4F2B16292C4F260067B32B /* EnterStudyKeywordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4F2B15292C4F260067B32B /* EnterStudyKeywordView.swift */; };
 		8F4F2B18292CD7D50067B32B /* EnterStudyKeywordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F4F2B17292CD7D50067B32B /* EnterStudyKeywordViewController.swift */; };
+		8F51DD5D29387E890007C958 /* CardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F51DD5C29387E890007C958 /* CardViewCell.swift */; };
 		8F564CA129210FB40035329C /* GenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F564CA029210FB40035329C /* GenderView.swift */; };
 		8F564CA329210FBD0035329C /* GenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F564CA229210FBD0035329C /* GenderViewController.swift */; };
 		8F5B7D26292710A10022554B /* WithdrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5B7D25292710A10022554B /* WithdrawViewController.swift */; };
@@ -70,6 +73,8 @@
 		8F5B7D2D29277DDA0022554B /* MyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5B7D2C29277DDA0022554B /* MyInfo.swift */; };
 		8F6082B2291F89D4008B6E58 /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6082B1291F89D4008B6E58 /* EmailView.swift */; };
 		8F6082B4291F8A98008B6E58 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6082B3291F8A98008B6E58 /* EmailViewController.swift */; };
+		8F69E2AF29382C6B00E9B52D /* NearSeSACViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F69E2AE29382C6B00E9B52D /* NearSeSACViewController.swift */; };
+		8F69E2B129382C8000E9B52D /* ReceivedRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F69E2B029382C8000E9B52D /* ReceivedRequestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,14 +127,18 @@
 		8F447E222923173300E7D19D /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		8F447E25292357F700E7D19D /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		8F447E27292395B100E7D19D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8F4DF52B29379A7B00993B38 /* FindSeSACViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindSeSACViewController.swift; sourceTree = "<group>"; };
 		8F4F2B15292C4F260067B32B /* EnterStudyKeywordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterStudyKeywordView.swift; sourceTree = "<group>"; };
 		8F4F2B17292CD7D50067B32B /* EnterStudyKeywordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterStudyKeywordViewController.swift; sourceTree = "<group>"; };
+		8F51DD5C29387E890007C958 /* CardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewCell.swift; sourceTree = "<group>"; };
 		8F564CA029210FB40035329C /* GenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderView.swift; sourceTree = "<group>"; };
 		8F564CA229210FBD0035329C /* GenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewController.swift; sourceTree = "<group>"; };
 		8F5B7D25292710A10022554B /* WithdrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawViewController.swift; sourceTree = "<group>"; };
 		8F5B7D2C29277DDA0022554B /* MyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfo.swift; sourceTree = "<group>"; };
 		8F6082B1291F89D4008B6E58 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 		8F6082B3291F8A98008B6E58 /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
+		8F69E2AE29382C6B00E9B52D /* NearSeSACViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearSeSACViewController.swift; sourceTree = "<group>"; };
+		8F69E2B029382C8000E9B52D /* ReceivedRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivedRequestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +153,7 @@
 				8F3FA5C9291BA55400379423 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				8F3FA5CD291BA55400379423 /* FirebaseCrashlytics in Frameworks */,
 				8F4245AF29194CAD00DDC3BE /* RxSwift in Frameworks */,
+				8F4DF528293797A900993B38 /* Tabman in Frameworks */,
 				8F4245AD29194CAD00DDC3BE /* RxCocoa in Frameworks */,
 				8F4245942919007300DDC3BE /* SnapKit in Frameworks */,
 				8F5B7D2A29274F560022554B /* MultiSlider in Frameworks */,
@@ -179,9 +189,8 @@
 				8F3719E2292DF71B006A8AC8 /* HomeViewModel.swift */,
 				8F3A1A0C29290FA700BCF0E8 /* HomeView.swift */,
 				8F3380362924BB87009AF898 /* HomeViewController.swift */,
-				8F4F2B15292C4F260067B32B /* EnterStudyKeywordView.swift */,
-				8F4F2B17292CD7D50067B32B /* EnterStudyKeywordViewController.swift */,
-				8F3719E0292DE5A8006A8AC8 /* StudyKewordCell.swift */,
+				8F4DF529293798F100993B38 /* StudyKeyword */,
+				8F4DF52A2937992800993B38 /* FindSeSAC */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -349,6 +358,27 @@
 			path = PhoneAuthorization;
 			sourceTree = "<group>";
 		};
+		8F4DF529293798F100993B38 /* StudyKeyword */ = {
+			isa = PBXGroup;
+			children = (
+				8F3719E0292DE5A8006A8AC8 /* StudyKewordCell.swift */,
+				8F4F2B15292C4F260067B32B /* EnterStudyKeywordView.swift */,
+				8F4F2B17292CD7D50067B32B /* EnterStudyKeywordViewController.swift */,
+			);
+			path = StudyKeyword;
+			sourceTree = "<group>";
+		};
+		8F4DF52A2937992800993B38 /* FindSeSAC */ = {
+			isa = PBXGroup;
+			children = (
+				8F4DF52B29379A7B00993B38 /* FindSeSACViewController.swift */,
+				8F51DD5C29387E890007C958 /* CardViewCell.swift */,
+				8F69E2AE29382C6B00E9B52D /* NearSeSACViewController.swift */,
+				8F69E2B029382C8000E9B52D /* ReceivedRequestViewController.swift */,
+			);
+			path = FindSeSAC;
+			sourceTree = "<group>";
+		};
 		8F564C9F29210FA20035329C /* Gender */ = {
 			isa = PBXGroup;
 			children = (
@@ -403,6 +433,7 @@
 				8F3FA5CE291BA55400379423 /* FirebaseMessaging */,
 				8F3DE1E52922855F0009D638 /* Alamofire */,
 				8F5B7D2929274F560022554B /* MultiSlider */,
+				8F4DF527293797A900993B38 /* Tabman */,
 			);
 			productName = SLP_FindStudyMembers;
 			productReference = 8F42456C2918D45200DDC3BE /* SLP_FindStudyMembers.app */;
@@ -439,6 +470,7 @@
 				8F3FA5C7291BA55400379423 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				8F3DE1E42922855F0009D638 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				8F5B7D2829274F560022554B /* XCRemoteSwiftPackageReference "MultiSlider" */,
+				8F4DF526293797A900993B38 /* XCRemoteSwiftPackageReference "Tabman" */,
 			);
 			productRefGroup = 8F42456D2918D45200DDC3BE /* Products */;
 			projectDirPath = "";
@@ -482,8 +514,10 @@
 				8F6082B2291F89D4008B6E58 /* EmailView.swift in Sources */,
 				8F4245742918D45200DDC3BE /* ViewController.swift in Sources */,
 				8F4003F9291A29DD0040D91B /* Transition+Extensions.swift in Sources */,
+				8F69E2B129382C8000E9B52D /* ReceivedRequestViewController.swift in Sources */,
 				8F3A1A0D29290FA700BCF0E8 /* HomeView.swift in Sources */,
 				8F4245A2291905FC00DDC3BE /* Constants.swift in Sources */,
+				8F51DD5D29387E890007C958 /* CardViewCell.swift in Sources */,
 				8F367FC329263C0F006CEB55 /* InfoTableView.swift in Sources */,
 				8F33804429251F80009AF898 /* MyDetailInfoView.swift in Sources */,
 				8F4245702918D45200DDC3BE /* AppDelegate.swift in Sources */,
@@ -502,6 +536,7 @@
 				8F3719E3292DF71B006A8AC8 /* HomeViewModel.swift in Sources */,
 				8F424596291900DC00DDC3BE /* BaseView.swift in Sources */,
 				8F4F2B16292C4F260067B32B /* EnterStudyKeywordView.swift in Sources */,
+				8F69E2AF29382C6B00E9B52D /* NearSeSACViewController.swift in Sources */,
 				8F3380472925212D009AF898 /* InfoCustomCells.swift in Sources */,
 				8F5B7D2D29277DDA0022554B /* MyInfo.swift in Sources */,
 				8F33803D2924EF74009AF898 /* MyInfoView.swift in Sources */,
@@ -509,6 +544,7 @@
 				8F4245B129194EA700DDC3BE /* EnterPhoneNumberView.swift in Sources */,
 				8F3FA5D2291BDC8900379423 /* BirthdayView.swift in Sources */,
 				8F5B7D26292710A10022554B /* WithdrawViewController.swift in Sources */,
+				8F4DF52C29379A7B00993B38 /* FindSeSACViewController.swift in Sources */,
 				8F4245722918D45200DDC3BE /* SceneDelegate.swift in Sources */,
 				8F4245A529190CD400DDC3BE /* PhoneAuthView.swift in Sources */,
 				8F4F2B18292CD7D50067B32B /* EnterStudyKeywordViewController.swift in Sources */,
@@ -784,6 +820,14 @@
 				minimumVersion = 6.0.0;
 			};
 		};
+		8F4DF526293797A900993B38 /* XCRemoteSwiftPackageReference "Tabman" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/uias/Tabman.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		8F5B7D2829274F560022554B /* XCRemoteSwiftPackageReference "MultiSlider" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/yonat/MultiSlider.git";
@@ -839,6 +883,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8F4245AB29194CAD00DDC3BE /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		8F4DF527293797A900993B38 /* Tabman */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F4DF526293797A900993B38 /* XCRemoteSwiftPackageReference "Tabman" */;
+			productName = Tabman;
 		};
 		8F5B7D2929274F560022554B /* MultiSlider */ = {
 			isa = XCSwiftPackageProductDependency;
