@@ -28,17 +28,13 @@ class QueueAPIManager {
                 print("errrror", error)
 
             }
-        }
-        
+        }        
         
     }
     
     func requestSearch(lat: Double, long: Double, completion: @escaping ((SearchSeSAC)-> Void)) {
         let api = SeSACStudyAPI.search(lat: lat, long: long)
-        print(api)
-        print(api.headers)
-        print(api.parameters)
-        
+
         AF.request(api.url, method: .post, parameters: api.parameters, headers: api.headers).responseDecodable(of: SearchSeSAC.self) { response in
             print(response.response)
             switch response.result {

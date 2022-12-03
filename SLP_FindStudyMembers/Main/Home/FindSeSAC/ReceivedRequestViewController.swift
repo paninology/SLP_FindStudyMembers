@@ -18,10 +18,20 @@ final class ReceivedRequestViewController: BaseViewController {
         return view
     }()
     
+    private let emptyView: EmptyView = {
+       let view = EmptyView()
+        view.image.image = UIImage(named: "sprout 1")
+        view.mainLabel.text = "아직 받은 요청이 없어요ㅠ"
+        view.subLabel.text = "스터디를 변경하거나 조금만 더 기다려 주세요!"
+        return view
+    }()
+    
     private var nearSeSAC: SearchSeSAC? {
         didSet {
+            setEmptyCase()
             tableView.reloadData()
         }
+        
     }
     
     var currentCoordinator: (Double,Double)? {
@@ -33,16 +43,21 @@ final class ReceivedRequestViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(tableView)
+        view.addSubview(emptyView)
         setConstraints()
         tableView.delegate = self
         tableView.dataSource = self
         currentCoordinator = UserDefaults.standard.object(forKey: "\(userDefaultData.myCoordinate)") as? (Double, Double) ?? (37.517819364682694,126.88647317074734) //기본값 수정할것
-        
+        setEmptyCase()
+        UIBind()
     }
   
     
     private func setConstraints() {
         tableView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        emptyView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
         
@@ -59,6 +74,30 @@ final class ReceivedRequestViewController: BaseViewController {
     fileprivate func requestButtonClicked() {
         print("수락하기 클릭!")
         transition(ReceivedRequestViewController(), transitionStyle: .presentOverFull)
+    }
+    
+    private func setEmptyCase() {
+//        let state = nearSeSAC?.fromQueueDBRequested == nil
+        if (nearSeSAC?.fromQueueDBRequested ?? []).isEmpty {
+            emptyView.isHidden = false
+        } else {
+            emptyView.isHidden = true
+        }
+    }
+    private func UIBind() {
+        emptyView.refreshButton.rx.tap
+            .withUnretained(self)
+            .bind { (vc,_) in
+                vc.requestSearchInfo()
+            }
+            .disposed(by: disposeBag)
+        
+        emptyView.changeButton.rx.tap
+            .withUnretained(self)
+            .bind { (vc,_) in
+                vc.navigationController?.popViewController(animated: true)
+            }
+            .disposed(by: disposeBag)
     }
     
 }
