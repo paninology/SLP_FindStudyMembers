@@ -17,6 +17,8 @@ final class EnterStudyKeywordViewController: BaseViewController {
 
     var currentCoordinator: (Double,Double)?
     
+    var studyKeywords: [String]?
+    
     private var searchInfo: SearchSeSAC?  {
         willSet {
             makeSnapShot(value0: newValue, value1: ["test333"])
@@ -67,6 +69,7 @@ final class EnterStudyKeywordViewController: BaseViewController {
             .withUnretained(self)
             .bind { (vc,_) in
                 vc.transition(FindSeSACViewController(), transitionStyle: .push)
+                
             }
             .disposed(by: disposeBag)
         
@@ -88,6 +91,17 @@ final class EnterStudyKeywordViewController: BaseViewController {
             self?.searchInfo = data
         }
     }
+    
+    func requestQueue() {
+        guard let currentCoordinator = currentCoordinator else {
+            mainView.makeToast("현재 위치설정이 잘못 되었습니다.")
+            return }
+        QueueAPIManager.share.requestQueue(lat: currentCoordinator.0, long: currentCoordinator.1, studyList: studyKeywords ?? ["anything"]) { data in
+            print("queueSuccesssss",data)
+        }
+    }
+    
+    
     
     func makeSnapShot(value0: SearchSeSAC?, value1: [String]) {
         var snapshot = NSDiffableDataSourceSnapshot<Int, String>()

@@ -15,6 +15,24 @@ class QueueAPIManager {
     
     private init() {}
     
+    func requestQueue(lat: Double, long: Double, studyList: [String], completion: @escaping ((String)-> Void)) {
+        let api = SeSACStudyAPI.queue(lat: lat, long: long, studyList: studyList)
+        
+        AF.request(api.url, method: .post, parameters: api.parameters, headers: api.headers).response { response in
+            
+            switch response.result {
+            case .success(let data):
+                print("success", data)
+//                completion(data)
+            case .failure(let error):
+                print("errrror", error)
+
+            }
+        }
+        
+        
+    }
+    
     func requestSearch(lat: Double, long: Double, completion: @escaping ((SearchSeSAC)-> Void)) {
         let api = SeSACStudyAPI.search(lat: lat, long: long)
         print(api)
@@ -30,6 +48,7 @@ class QueueAPIManager {
                 completion(data)
             case .failure(let error):
                 print("errrror", error)
+
             }
             
             

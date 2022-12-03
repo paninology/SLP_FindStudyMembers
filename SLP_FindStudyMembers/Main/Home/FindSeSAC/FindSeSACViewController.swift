@@ -20,6 +20,8 @@ class FindSeSACViewController: TabmanViewController {
         self.dataSource = self
 
         navigationItem.title = "새싹찾기"
+        navigationController?.navigationBar.backgroundColor = .systemBackground
+
         // Create bar
         setTapMan()
     }
@@ -29,7 +31,7 @@ class FindSeSACViewController: TabmanViewController {
         bar.layout.transitionStyle = .snap // Customize
         bar.layout.contentMode = .fit
         bar.layout.alignment = .centerDistributed
-        bar.backgroundView.style = .clear
+        bar.backgroundView.style = .flat(color: .systemBackground)
         bar.indicator.tintColor = Constants.Color.customGreen
         bar.buttons.customize { (button) in
             button.font = .systemFont(ofSize: 14)

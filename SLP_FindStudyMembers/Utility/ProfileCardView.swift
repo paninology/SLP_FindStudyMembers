@@ -47,14 +47,16 @@ class ProfileCardView: BaseView {
     
     override func configure() {
         [backgroundImageView, sproutImageView, indicator, profileView, nameLabel].forEach { addSubview($0) }
-        print("cardView============")
+
     }
     
     override func setConstraints() {
         backgroundImageView.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(16)
-            make.top.equalToSuperview()
-            make.height.equalTo(200)
+            make.top.equalToSuperview().inset(24)
+//            make.bottom.equalToSuperview()
+            make.bottom.equalTo(profileView.snp.top)
+//            make.height.equalTo(200)
         }
         
         sproutImageView.snp.makeConstraints { make in
@@ -67,8 +69,9 @@ class ProfileCardView: BaseView {
         
         profileView.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview().inset(16)
-//          make.bottom.equalToSuperview()
+            make.bottom.equalToSuperview()
             make.top.equalTo(backgroundImageView.snp.bottom)
+            
             make.height.equalTo(58)
         }
         

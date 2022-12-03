@@ -13,18 +13,25 @@ class CardViewCell: UITableViewCell {
     
     let requestButton: UIButton = {
         let view = UIButton()
+        view.layer.cornerRadius = 8
+        
         return view
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        addSubview(card)
-        addSubview(requestButton)
-        print("cardCEll============")
-       
+        contentView.addSubview(card)
+        contentView.addSubview(requestButton)
+        
         card.snp.makeConstraints { make in
             make.edges.equalToSuperview()
 //            make.height.equalTo(300)
+        }
+        requestButton.snp.makeConstraints { make in
+            make.top.equalTo(card.backgroundImageView.snp.top).inset(12)
+            make.trailing.equalToSuperview().inset(28)
+            make.width.equalTo(80)
+            make.height.equalTo(40)
         }
 
     }

@@ -74,6 +74,7 @@ extension HomeViewContoller: CLLocationManagerDelegate {
         if let coordinate = locations.last?.coordinate {
             print("sssss")
             setRegionAndAnnotation(center: coordinate)
+            UserDefaultManager.setUserDefault(key: .myCoordinate, value: (coordinate.latitude, coordinate.longitude))
             //날씨 정보 API 요청
         }
         

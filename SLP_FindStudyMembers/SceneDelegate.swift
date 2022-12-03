@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
 //        let vc = PhoneAuthoViewController()
         LoginAPIManager.share.refreshIDToken()
-        let home = FindSeSACViewController()
+        let home = HomeViewContoller()
         let navi = UINavigationController(rootViewController: home)
         self.window?.rootViewController = navi
     

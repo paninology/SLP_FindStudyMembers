@@ -15,31 +15,11 @@ enum userDefaultData {
     case phoneNumber
     case FCMtoken
     case birthday
+    case myCoordinate
 }
 
 
 struct UserDefaultManager {
-    
-    //UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
-    // UserDefaults.standard.set(idToken, forKey: "idToken")
-    
-//    static var idToken: String {
-//        get {
-//            UserDefaults.standard.string(forKey: "idToken") ?? "idToken을 찾을수 없습니다."
-//        }
-//        set {
-//            UserDefaults.standard.set(newValue, forKey: "idToken")
-//        }
-//    }
-//
-//    static var nickName: String {
-//        get {
-//            UserDefaults.standard.string(forKey: "nickName") ?? "nickName을 찾을수 없습니다."
-//        }
-//        set {
-//            UserDefaults.standard.set(newValue, forKey: "nickName")
-//        }
-//    }
     
     static func getUserDefault(key: userDefaultData) -> String {
         UserDefaults.standard.string(forKey: "\(key)") ?? ""

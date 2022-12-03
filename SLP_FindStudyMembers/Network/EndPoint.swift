@@ -13,6 +13,7 @@ enum SeSACStudyAPI {
     case signIn(phoneNumber: String, FCMtoken: String, nick: String, birth: String, email: String, gender: Int)
     case logIn
     case search(lat: Double, long: Double)
+    case queue(lat: Double, long: Double, studyList: [String])
 }
 
 extension SeSACStudyAPI {
@@ -22,12 +23,14 @@ extension SeSACStudyAPI {
             return URL(string: "\(EndPoint.SeSACBaseURL)/v1/user")!
         case .search:
             return URL(string: "\(EndPoint.SeSACBaseURL)/v1/queue/search")!
+        case .queue:
+            return URL(string: "\(EndPoint.SeSACBaseURL)/v1/queue")!
         }
     }
     
     var headers: HTTPHeaders {
         switch self {
-        case .signIn, .logIn, .search :
+        case .signIn, .logIn, .search, .queue :
             return [
                 "idtoken": UserDefaultManager.getUserDefault(key: .idToken),
                 "Content-Type": "application/x-www-form-urlencoded"
@@ -50,6 +53,12 @@ extension SeSACStudyAPI {
             return [
                 "lat": lat,
                 "long": long
+            ]
+        case .queue(let lat, let long, let studyList):
+            return [
+                "lat": lat,
+                "long": long,
+                "studylist": studyList
             ]
         default:
             return ["":""]
