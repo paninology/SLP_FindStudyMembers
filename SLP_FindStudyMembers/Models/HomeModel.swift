@@ -23,4 +23,9 @@ struct FromQueueDB: Codable {
     let gender, type, sesac, background: Int
 }
 
+// MARK: - MyQueueState
+struct MyQueueState: Codable {
+    let dodged, matched, reviewed: Int
+    let matchedNick, matchedUid: String
+}
 

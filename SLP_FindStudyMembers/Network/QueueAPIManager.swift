@@ -51,5 +51,22 @@ class QueueAPIManager {
         }
     }
     
+    func requestMyQueueState(completion: @escaping ((Int?,MyQueueState?) -> Void)) {
+        let api = SeSACStudyAPI.myQueueState
+        
+        AF.request(api.url, method: .get, headers: api.headers).responseDecodable(of: MyQueueState.self) { response in
+            
+            switch response.result {
+            case .success(let data):
+                print("success", data)
+                completion(response.response?.statusCode, data)
+            case .failure(let error):
+                print("errrror", error)
+                completion(response.response?.statusCode, nil)
+
+            }
+        }
+    }
+    
     
 }

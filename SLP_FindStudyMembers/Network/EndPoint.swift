@@ -14,6 +14,7 @@ enum SeSACStudyAPI {
     case logIn
     case search(lat: Double, long: Double)
     case queue(lat: Double, long: Double, studyList: [String])
+    case myQueueState
 }
 
 extension SeSACStudyAPI {
@@ -25,12 +26,14 @@ extension SeSACStudyAPI {
             return URL(string: "\(EndPoint.SeSACBaseURL)/v1/queue/search")!
         case .queue:
             return URL(string: "\(EndPoint.SeSACBaseURL)/v1/queue")!
+        case .myQueueState:
+            return URL(string: "\(EndPoint.SeSACBaseURL)/v1/queue/myQueueState")!
         }
     }
     
     var headers: HTTPHeaders {
         switch self {
-        case .signIn, .logIn, .search, .queue :
+        case .signIn, .logIn, .search, .queue, .myQueueState :
             return [
                 "idtoken": UserDefaultManager.getUserDefault(key: .idToken),
                 "Content-Type": "application/x-www-form-urlencoded"

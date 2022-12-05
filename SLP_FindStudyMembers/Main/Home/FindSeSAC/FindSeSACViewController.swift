@@ -21,7 +21,9 @@ class FindSeSACViewController: TabmanViewController {
 
         navigationItem.title = "새싹찾기"
         navigationController?.navigationBar.backgroundColor = .systemBackground
-
+        view.backgroundColor = .systemBackground
+        navigationController?.navigationBar.isTranslucent = false
+        UINavigationBar.appearance().backgroundColor = .systemBackground
         // Create bar
         setTapMan()
     }

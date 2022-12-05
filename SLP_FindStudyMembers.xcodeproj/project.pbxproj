@@ -15,6 +15,11 @@
 		8F33804229251F0D009AF898 /* InfoManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F33804129251F0D009AF898 /* InfoManagementView.swift */; };
 		8F33804429251F80009AF898 /* MyDetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F33804329251F80009AF898 /* MyDetailInfoView.swift */; };
 		8F3380472925212D009AF898 /* InfoCustomCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3380462925212D009AF898 /* InfoCustomCells.swift */; };
+		8F351E44293DB3F800820489 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F351E43293DB3F800820489 /* IntroViewController.swift */; };
+		8F351E46293DB42700820489 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F351E45293DB42700820489 /* IntroView.swift */; };
+		8F351E4B293DC5EC00820489 /* FirstIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F351E4A293DC5EC00820489 /* FirstIntroView.swift */; };
+		8F351E4D293DC5F600820489 /* SecondIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F351E4C293DC5F600820489 /* SecondIntroView.swift */; };
+		8F351E4F293DC5FF00820489 /* ThirdIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F351E4E293DC5FF00820489 /* ThirdIntroView.swift */; };
 		8F367FC12926286F006CEB55 /* ProfileCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F367FC02926286F006CEB55 /* ProfileCardView.swift */; };
 		8F367FC329263C0F006CEB55 /* InfoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F367FC229263C0F006CEB55 /* InfoTableView.swift */; };
 		8F3719E1292DE5A8006A8AC8 /* StudyKewordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3719E0292DE5A8006A8AC8 /* StudyKewordCell.swift */; };
@@ -75,6 +80,7 @@
 		8F5B7D26292710A10022554B /* WithdrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5B7D25292710A10022554B /* WithdrawViewController.swift */; };
 		8F5B7D2A29274F560022554B /* MultiSlider in Frameworks */ = {isa = PBXBuildFile; productRef = 8F5B7D2929274F560022554B /* MultiSlider */; };
 		8F5B7D2D29277DDA0022554B /* MyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5B7D2C29277DDA0022554B /* MyInfo.swift */; };
+		8F5B7E54293CA623002596DD /* ProfileDetailCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5B7E53293CA623002596DD /* ProfileDetailCardView.swift */; };
 		8F6082B2291F89D4008B6E58 /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6082B1291F89D4008B6E58 /* EmailView.swift */; };
 		8F6082B4291F8A98008B6E58 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6082B3291F8A98008B6E58 /* EmailViewController.swift */; };
 		8F69E2AF29382C6B00E9B52D /* NearSeSACViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F69E2AE29382C6B00E9B52D /* NearSeSACViewController.swift */; };
@@ -91,6 +97,11 @@
 		8F33804129251F0D009AF898 /* InfoManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoManagementView.swift; sourceTree = "<group>"; };
 		8F33804329251F80009AF898 /* MyDetailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDetailInfoView.swift; sourceTree = "<group>"; };
 		8F3380462925212D009AF898 /* InfoCustomCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCustomCells.swift; sourceTree = "<group>"; };
+		8F351E43293DB3F800820489 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		8F351E45293DB42700820489 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
+		8F351E4A293DC5EC00820489 /* FirstIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstIntroView.swift; sourceTree = "<group>"; };
+		8F351E4C293DC5F600820489 /* SecondIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondIntroView.swift; sourceTree = "<group>"; };
+		8F351E4E293DC5FF00820489 /* ThirdIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdIntroView.swift; sourceTree = "<group>"; };
 		8F367FC02926286F006CEB55 /* ProfileCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCardView.swift; sourceTree = "<group>"; };
 		8F367FC229263C0F006CEB55 /* InfoTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableView.swift; sourceTree = "<group>"; };
 		8F3719E0292DE5A8006A8AC8 /* StudyKewordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyKewordCell.swift; sourceTree = "<group>"; };
@@ -144,6 +155,7 @@
 		8F564CA229210FBD0035329C /* GenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewController.swift; sourceTree = "<group>"; };
 		8F5B7D25292710A10022554B /* WithdrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawViewController.swift; sourceTree = "<group>"; };
 		8F5B7D2C29277DDA0022554B /* MyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfo.swift; sourceTree = "<group>"; };
+		8F5B7E53293CA623002596DD /* ProfileDetailCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailCardView.swift; sourceTree = "<group>"; };
 		8F6082B1291F89D4008B6E58 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 		8F6082B3291F8A98008B6E58 /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 		8F69E2AE29382C6B00E9B52D /* NearSeSACViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearSeSACViewController.swift; sourceTree = "<group>"; };
@@ -321,6 +333,11 @@
 			isa = PBXGroup;
 			children = (
 				8F4245892918DD0500DDC3BE /* Intro.storyboard */,
+				8F351E45293DB42700820489 /* IntroView.swift */,
+				8F351E4A293DC5EC00820489 /* FirstIntroView.swift */,
+				8F351E4C293DC5F600820489 /* SecondIntroView.swift */,
+				8F351E4E293DC5FF00820489 /* ThirdIntroView.swift */,
+				8F351E43293DB3F800820489 /* IntroViewController.swift */,
 			);
 			path = Intro;
 			sourceTree = "<group>";
@@ -346,6 +363,7 @@
 				8F424595291900DC00DDC3BE /* BaseView.swift */,
 				8F4003F2291A22220040D91B /* BaseViewController.swift */,
 				8F367FC02926286F006CEB55 /* ProfileCardView.swift */,
+				8F5B7E53293CA623002596DD /* ProfileDetailCardView.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -527,9 +545,11 @@
 			files = (
 				8F447E26292357F700E7D19D /* UserDefaultManager.swift in Sources */,
 				8F3FA5B4291B2A3100379423 /* NickNameView.swift in Sources */,
+				8F351E4B293DC5EC00820489 /* FirstIntroView.swift in Sources */,
 				8F42459C291903B000DDC3BE /* CustomButtons.swift in Sources */,
 				8F33804229251F0D009AF898 /* InfoManagementView.swift in Sources */,
 				8F3380392924BBCA009AF898 /* TabBarController.swift in Sources */,
+				8F351E44293DB3F800820489 /* IntroViewController.swift in Sources */,
 				8F3DE1E0292282550009D638 /* APIKeys.swift in Sources */,
 				8F3DE1E2292282740009D638 /* LoginAPIManager.swift in Sources */,
 				8F3FA5B6291B2F5D00379423 /* NickNameViewController.swift in Sources */,
@@ -543,8 +563,10 @@
 				8F69E2B129382C8000E9B52D /* ReceivedRequestViewController.swift in Sources */,
 				8F3A1A0D29290FA700BCF0E8 /* HomeView.swift in Sources */,
 				8F4245A2291905FC00DDC3BE /* Constants.swift in Sources */,
+				8F351E4D293DC5F600820489 /* SecondIntroView.swift in Sources */,
 				8F4183C2293B2B63000F434F /* ReceivedPopUpViewController.swift in Sources */,
 				8F51DD5D29387E890007C958 /* CardViewCell.swift in Sources */,
+				8F351E46293DB42700820489 /* IntroView.swift in Sources */,
 				8F367FC329263C0F006CEB55 /* InfoTableView.swift in Sources */,
 				8F33804429251F80009AF898 /* MyDetailInfoView.swift in Sources */,
 				8F4245702918D45200DDC3BE /* AppDelegate.swift in Sources */,
@@ -560,9 +582,11 @@
 				8F4245992919025B00DDC3BE /* Color.swift in Sources */,
 				8F33803B2924EE85009AF898 /* MyInfoViewController.swift in Sources */,
 				8F3380372924BB87009AF898 /* HomeViewController.swift in Sources */,
+				8F5B7E54293CA623002596DD /* ProfileDetailCardView.swift in Sources */,
 				8F42458E2918FE9600DDC3BE /* LogInView.swift in Sources */,
 				8F3719E3292DF71B006A8AC8 /* HomeViewModel.swift in Sources */,
 				8F424596291900DC00DDC3BE /* BaseView.swift in Sources */,
+				8F351E4F293DC5FF00820489 /* ThirdIntroView.swift in Sources */,
 				8F4F2B16292C4F260067B32B /* EnterStudyKeywordView.swift in Sources */,
 				8F69E2AF29382C6B00E9B52D /* NearSeSACViewController.swift in Sources */,
 				8F3380472925212D009AF898 /* InfoCustomCells.swift in Sources */,

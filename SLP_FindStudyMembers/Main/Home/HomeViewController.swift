@@ -27,12 +27,24 @@ final class HomeViewContoller: BaseViewController {
         locationManager.delegate = self
         let center = CLLocationCoordinate2D(latitude: 37.517819364682694, longitude: 126.88647317074734)
         setRegionAndAnnotation(center: center)
+        
+        
         UIBind()
         navigationItem.backButtonTitle = ""
 
     }
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
+        QueueAPIManager.share.requestMyQueueState { [weak self] statusCode, response in
+            print("myqueue", statusCode, response)
+            if statusCode == 201 {
+                self?.mainView.findButton.setImage(UIImage(named: "default"), for: .normal)
+            } else if statusCode == 200 && response?.matched == 0 {
+                self?.mainView.findButton.setImage(UIImage(named: "matching"), for: .normal)
+            } else if statusCode == 200 && response?.matched == 1 {
+                self?.mainView.findButton.setImage(UIImage(named: "matched"), for: .normal)
+            }
+        }
     }
     override func viewDidAppear(_ animated: Bool) {
        
