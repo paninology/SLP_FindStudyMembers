@@ -12,6 +12,8 @@ class IntroView: BaseView {
     let mainLabel: UILabel = {
         let view = UILabel()
         view.font = .systemFont(ofSize: 24)
+        view.numberOfLines = 0
+        view.textAlignment = .center
         return view
     }()
     
@@ -21,26 +23,32 @@ class IntroView: BaseView {
         return view
     }()
     
-    override init(frame: CGRect, text: String) {
+    
+    override init(frame: CGRect) {
         super.init(frame: frame)
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func configure() {
-        super.configure()
-        addSubview(mainLabel)
-        addSubview(imageView)
+
+        [mainLabel,imageView].forEach { addSubview($0) }
+
     }
     
     override func setConstraints() {
-        super.setConstraints()
         mainLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().inset(72)
+            make.top.equalToSuperview().inset(110)
+            make.height.equalTo(76)
         }
         
         imageView.snp.makeConstraints { make in
-            make.top.equalTo(mainLabel.snp.bottom).offset(56)
-            make.bottom.equalToSuperview()
+            make.top.equalTo(mainLabel.snp.bottom).inset(24)
+            make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview().inset(40)
         }
     }
 }

@@ -83,6 +83,7 @@
 		8F5B7E54293CA623002596DD /* ProfileDetailCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5B7E53293CA623002596DD /* ProfileDetailCardView.swift */; };
 		8F6082B2291F89D4008B6E58 /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6082B1291F89D4008B6E58 /* EmailView.swift */; };
 		8F6082B4291F8A98008B6E58 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6082B3291F8A98008B6E58 /* EmailViewController.swift */; };
+		8F61ED60293EDFDD00EF73E0 /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F61ED5F293EDFDD00EF73E0 /* TestVC.swift */; };
 		8F69E2AF29382C6B00E9B52D /* NearSeSACViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F69E2AE29382C6B00E9B52D /* NearSeSACViewController.swift */; };
 		8F69E2B129382C8000E9B52D /* ReceivedRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F69E2B029382C8000E9B52D /* ReceivedRequestViewController.swift */; };
 		8F9D3C2A293A376800C346DA /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9D3C29293A376800C346DA /* PopUpView.swift */; };
@@ -158,6 +159,7 @@
 		8F5B7E53293CA623002596DD /* ProfileDetailCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailCardView.swift; sourceTree = "<group>"; };
 		8F6082B1291F89D4008B6E58 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 		8F6082B3291F8A98008B6E58 /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
+		8F61ED5F293EDFDD00EF73E0 /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
 		8F69E2AE29382C6B00E9B52D /* NearSeSACViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearSeSACViewController.swift; sourceTree = "<group>"; };
 		8F69E2B029382C8000E9B52D /* ReceivedRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivedRequestViewController.swift; sourceTree = "<group>"; };
 		8F9D3C29293A376800C346DA /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
@@ -271,7 +273,6 @@
 			isa = PBXGroup;
 			children = (
 				8F4003F8291A29DD0040D91B /* Transition+Extensions.swift */,
-				8F447E25292357F700E7D19D /* UserDefaultManager.swift */,
 				8F4003FA291A593E0040D91B /* String+Extension.swift */,
 			);
 			path = Extensions;
@@ -313,8 +314,8 @@
 				8F4245712918D45200DDC3BE /* SceneDelegate.swift */,
 				8F4245732918D45200DDC3BE /* ViewController.swift */,
 				8F4245752918D45200DDC3BE /* Main.storyboard */,
+				8F61ED62293F713700EF73E0 /* Managers */,
 				8F4003F7291A29AA0040D91B /* Extensions */,
-				8F3DE1DE292282370009D638 /* Network */,
 				8F4245972919023F00DDC3BE /* Constants */,
 				8F42458F2918FEF800DDC3BE /* Utility */,
 				8F5B7D2B29277DA40022554B /* Models */,
@@ -334,6 +335,7 @@
 			children = (
 				8F4245892918DD0500DDC3BE /* Intro.storyboard */,
 				8F351E45293DB42700820489 /* IntroView.swift */,
+				8F61ED5F293EDFDD00EF73E0 /* TestVC.swift */,
 				8F351E4A293DC5EC00820489 /* FirstIntroView.swift */,
 				8F351E4C293DC5F600820489 /* SecondIntroView.swift */,
 				8F351E4E293DC5FF00820489 /* ThirdIntroView.swift */,
@@ -445,6 +447,23 @@
 				8F6082B3291F8A98008B6E58 /* EmailViewController.swift */,
 			);
 			path = EnterEmail;
+			sourceTree = "<group>";
+		};
+		8F61ED61293F711B00EF73E0 /* UserDefault */ = {
+			isa = PBXGroup;
+			children = (
+				8F447E25292357F700E7D19D /* UserDefaultManager.swift */,
+			);
+			path = UserDefault;
+			sourceTree = "<group>";
+		};
+		8F61ED62293F713700EF73E0 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				8F3DE1DE292282370009D638 /* Network */,
+				8F61ED61293F711B00EF73E0 /* UserDefault */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -577,6 +596,7 @@
 				8F4245A729190D9F00DDC3BE /* PhoneAuthViewController.swift in Sources */,
 				8F3719E5292E2B11006A8AC8 /* HomeModel.swift in Sources */,
 				8F6082B4291F8A98008B6E58 /* EmailViewController.swift in Sources */,
+				8F61ED60293EDFDD00EF73E0 /* TestVC.swift in Sources */,
 				8F4003FB291A593E0040D91B /* String+Extension.swift in Sources */,
 				8F3C5CC42939CA0B00FF8636 /* AssetNames.swift in Sources */,
 				8F4245992919025B00DDC3BE /* Color.swift in Sources */,

@@ -16,13 +16,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
         window?.makeKeyAndVisible()
-        
+        guard UserDefaultManager.getIntUserDefault(key: .isFirstUser) == 1  else {
+            self.window?.rootViewController = IntroViewController()
+            return
+        }
 //        let vc = PhoneAuthoViewController()
-        LoginAPIManager.share.refreshIDToken()
-        let home = HomeViewContoller()
-        let navi = UINavigationController(rootViewController: home)
-        self.window?.rootViewController = navi
-    
+//        LoginAPIManager.share.refreshIDToken()
+//        let home = HomeViewContoller()
+//        let navi = UINavigationController(rootViewController: home)
+        self.window?.rootViewController = IntroViewController()
+
         //아래가 정상. 위는 테스트용
         // 1. 첫 사용자 >> 아이디토큰 없음/ 서버 미가입 >> 번호인증 후 회원가입절차
         // 1-2. 첫 사용자(파베 인증만 완료. 중도에 앱끔) >> 아이디토큰 있음/ 겟서버통신 406 >> 바로 회원가입창(닉네임)
